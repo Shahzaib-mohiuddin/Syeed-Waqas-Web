@@ -56,9 +56,30 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// FAQ Accordion functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ item
+            item.classList.toggle('active');
+        });
+    });
+});
+
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.feature-card, .course-card, .testimonial-card, .pricing-highlight');
+    const animateElements = document.querySelectorAll('.feature-card, .course-card, .testimonial-card, .pricing-highlight, .faq-item');
     animateElements.forEach(el => observer.observe(el));
 });
 

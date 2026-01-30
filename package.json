@@ -1,0 +1,25 @@
+{
+  "name": "syeed-waqas-sat-prep",
+  "version": "1.0.0",
+  "description": "Professional SAT prep website for Dr. Syeed Waqas - PhD in Mathematics",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "dev": "python3 -m http.server 8080",
+    "serve": "npx http-server -p 8080 -c-1 -o",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "keywords": [
+    "sat",
+    "prep",
+    "tutoring",
+    "mathematics",
+    "education",
+    "website"
+  ],
+  "author": "Dr. Syeed Waqas",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

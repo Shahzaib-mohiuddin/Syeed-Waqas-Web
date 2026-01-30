@@ -24,9 +24,44 @@ Syeed Waqas website/
 
 ## 🚀 Getting Started
 
-1. **Download the files** to your local directory
-2. **Open `index.html`** in your web browser
-3. **No installation required** - it's a static website
+### Option 1: Quick Start (Recommended)
+```bash
+# Clone or download the files to your local directory
+cd "Syeed Waqas website"
+
+# Start the server using the provided script
+./start-server.sh
+```
+
+### Option 2: Manual Start
+```bash
+# Using Python 3 (recommended)
+python3 -m http.server 8080
+
+# Or using Python 2
+python -m SimpleHTTPServer 8080
+
+# Or using Node.js
+npx http-server -p 8080 -c-1
+```
+
+### Option 3: Using npm scripts
+```bash
+# Install dependencies (optional, for Node.js server)
+npm install
+
+# Start the development server
+npm start
+# or
+npm run dev
+# or
+npm run serve
+```
+
+3. **Open your browser** and navigate to `http://localhost:8080`
+4. **No installation required** - it's a static website
+
+🔥 **Permanent Solution**: The `start-server.sh` script automatically detects and uses the best available server (Python 3, Python, or Node.js) on your system.
 
 ## 🎨 Design Highlights
 

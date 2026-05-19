@@ -4,12 +4,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Dr. Syeed SAT Prep</title>
-    <meta name="description" content="Learn about Dr. Syeed, PhD in Mathematics with 13+ years of SAT prep experience. Expert math tutoring for college admission success.">
+    <title>About - Dr. Syed Waqas | PhD Math Tutor</title>
+    <meta name="description" content="Learn about Dr. Syed Waqas, PhD in Mathematics with 13+ years of teaching experience. Expert math tutoring from Algebra to Calculus.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="courses.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── Dr. Syed Video Section ── */
+        .dr-video-section {
+            padding: 90px 0;
+            background: linear-gradient(135deg, #2a3f8a 0%, #344CC6 50%, #2a3f8a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dr-video-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .dr-video-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .dr-video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dr-video-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(52, 76, 198, 0.2);
+            border: 1px solid rgba(52, 76, 198, 0.4);
+            color: #93a6f5;
+            padding: 0.45rem 1.1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .dr-video-badge i {
+            font-size: 0.85rem;
+        }
+
+        .dr-video-title {
+            font-size: 2.75rem;
+            font-weight: 300;
+            color: #ffffff;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+            margin-bottom: 1.25rem;
+        }
+
+        .dr-video-title em {
+            font-style: normal;
+            background: linear-gradient(90deg, #7c9cf8, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .dr-video-desc {
+            font-size: 1rem;
+            color: #94a3b8;
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .dr-video-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2.25rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+        }
+
+        .dr-video-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #cbd5e1;
+            font-size: 0.9375rem;
+            font-weight: 300;
+        }
+
+        .dr-video-list li i {
+            width: 22px;
+            height: 22px;
+            background: rgba(52, 198, 120, 0.15);
+            border: 1px solid rgba(52, 198, 120, 0.3);
+            color: #4ade80;
+            border-radius: 50%;
+            font-size: 0.625rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .dr-video-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #344CC6, #2a3f8a);
+            color: #ffffff;
+            padding: 0.875rem 1.75rem;
+            border-radius: 50px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(52, 76, 198, 0.35);
+        }
+
+        .dr-video-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(52, 76, 198, 0.5);
+        }
+
+        .dr-video-frame {
+            position: relative;
+        }
+
+        .dr-video-glow {
+            position: absolute;
+            inset: -20px;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 28px;
+            pointer-events: none;
+        }
+
+        .dr-video-embed {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.06);
+        }
+
+        .dr-video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 992px) {
+            .dr-video-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 0 24px;
+            }
+
+            .dr-video-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .dr-video-section {
+                padding: 60px 0;
+            }
+
+            .dr-video-container {
+                padding: 0 16px;
+            }
+
+            .dr-video-title {
+                font-size: 1.875rem;
+            }
+
+            .dr-video-cta {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -18,8 +220,8 @@
         <nav class="navbar">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo">
-                    <h2>Dr. Syeed</h2>
-                    <span>SAT Prep</span>
+                    <h2>Dr. Syed</h2>
+                    <span>Math Tutoring</span>
                 </a>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -35,7 +237,10 @@
                         <a href="results.html" class="nav-link">Results</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#pricing" class="nav-link">Pricing</a>
+                        <a href="pricing.html" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item mobile-only">
+                        <a href="contact.html" class="nav-link">Contact</a>
                     </li>
                 </ul>
                 <div class="nav-buttons">
@@ -51,66 +256,121 @@
     </header>
 
     <!-- About Hero Section -->
-    <section class="about-hero">
+    <section class="about-hero-v2">
         <div class="container">
-            <div class="about-hero-content">
-                <span class="about-badge">Meet Your Instructor</span>
-                <h1>Dr. Syeed Waqas - <span class="text-highlight-green">PhD in Mathematics</span></h1>
-                <p>13+ years of experience helping students achieve their dream SAT scores and gain admission to top universities</p>
+            <div class="about-hero-centered">
+                <div class="about-hero-portrait">
+                    <img src="images/drsyedpng.png" alt="Dr. Syed Waqas - PhD Math Tutor">
+                    
+                    <!-- Floating Review 1 -->
+                    <div class="about-floating-review review-top-left">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Got a 1550! Dr. Syed is magic."</p>
+                        <span class="review-author">— Sarah T.</span>
+                    </div>
+                    
+                    <!-- Floating Review 2 -->
+                    <div class="about-floating-review review-mid-right">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Finally understood Calculus!"</p>
+                        <span class="review-author">— Michael R.</span>
+                    </div>
+                    
+                    <!-- Floating Review 3 -->
+                    <div class="about-floating-review review-bottom-left">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Accepted to MIT!"</p>
+                        <span class="review-author">— David L.</span>
+                    </div>
+                </div>
+
+                <div class="about-hero-info">
+                    <span class="about-hero-v2-label">Meet Your Instructor</span>
+                    <h1>Dr. Syed Waqas</h1>
+                    <p class="about-hero-v2-role">PhD in Mathematics · 13+ Years Teaching</p>
+                    <p class="about-hero-v2-desc">Helping students master math — from Algebra fundamentals to AP Calculus excellence — through deep conceptual understanding, not memorization.</p>
+                </div>
+            </div>
+            <div class="about-stats-bar">
+                <div class="about-stat">
+                    <span class="about-stat-number">500+</span>
+                    <span class="about-stat-text">Students Taught</span>
+                </div>
+                <div class="about-stat-divider"></div>
+                <div class="about-stat">
+                    <span class="about-stat-number">13+</span>
+                    <span class="about-stat-text">Years Experience</span>
+                </div>
+                <div class="about-stat-divider"></div>
+                <div class="about-stat">
+                    <span class="about-stat-number">98%</span>
+                    <span class="about-stat-text">Success Rate</span>
+                </div>
+                <div class="about-stat-divider"></div>
+                <div class="about-stat">
+                    <span class="about-stat-number">+310</span>
+                    <span class="about-stat-text">Avg. Score Gain</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Content Section -->
-    <section class="about-content">
+    <!-- Story Section -->
+    <section class="about-story">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h2>Expertise That Makes a Difference</h2>
-                    <p>With a PhD in Mathematics and over 13 years of teaching experience, Dr. Syeed brings a level of expertise rarely found in high school tutoring. Unlike standard tutors who rely on memorized tricks, Dr. Syeed teaches the underlying logic of mathematics.</p>
-                    
-                    <p>Specializing in SAT Math and AP Calculus, he has helped hundreds of students transform their confusion into confidence. His method is simple: when you understand the "Why" behind the math, the "How" becomes easy—and top scores follow naturally.</p>
-                    
-                    <div class="expertise-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <h3>PhD in Mathematics</h3>
-                                <p>Advanced mathematical knowledge and research experience</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-chart-line"></i>
-                            <div>
-                                <h3>13+ Years Experience</h3>
-                                <p>Proven track record of student success</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-trophy"></i>
-                            <div>
-                                <h3>98% Success Rate</h3>
-                                <p>Students consistently achieve target scores</p>
-                            </div>
-                        </div>
+            <div class="about-story-inner">
+                <div class="about-story-label">The Story</div>
+                <h2>Expertise That Makes a <em>Difference</em></h2>
+                <div class="about-story-divider"></div>
+                <div class="about-story-columns">
+                    <div class="about-story-col">
+                        <p>With a PhD in Mathematics and over 13 years of teaching experience, Dr. Syed Waqas brings a level of expertise rarely found in math tutoring. Unlike standard tutors who rely on memorized tricks, Dr. Syed teaches the underlying logic of mathematics.</p>
+                    </div>
+                    <div class="about-story-col">
+                        <p>Specializing in Algebra, Geometry, Pre Calculus, and AP Calculus (AB & BC), he has helped hundreds of students transform their confusion into confidence. When you understand the "Why" behind the math, the "How" becomes easy — and top scores follow naturally.</p>
                     </div>
                 </div>
-                
-                <div class="about-image">
-                    <img src="images/drsyeedpng.png" alt="Dr. Syeed - SAT Math Tutor" class="about-image-main">
-                    <div class="about-credentials">
-                        <div class="credential-item">
-                            <i class="fas fa-university"></i>
-                            <span>PhD Mathematics</span>
-                        </div>
-                        <div class="credential-item">
-                            <i class="fas fa-award"></i>
-                            <span>Certified SAT Instructor</span>
-                        </div>
-                        <div class="credential-item">
-                            <i class="fas fa-users"></i>
-                            <span>500+ Students Taught</span>
-                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Dr. Syed Video Section -->
+    <section class="dr-video-section">
+        <div class="dr-video-container">
+            <div class="dr-video-left">
+                <div class="dr-video-badge">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Watch &amp; Learn</span>
+                </div>
+                <h2 class="dr-video-title">Solve Hard SAT Math <br><em>in Seconds</em></h2>
+                <p class="dr-video-desc">Watch Dr. Syed demonstrate the exact techniques he uses to tackle the hardest SAT math problems — fast, clean, and with full clarity. No tricks, no memorization, just real understanding.</p>
+                <ul class="dr-video-list">
+                    <li><i class="fas fa-check"></i> Speed strategies for hard SAT questions</li>
+                    <li><i class="fas fa-check"></i> Step-by-step live problem walkthrough</li>
+                    <li><i class="fas fa-check"></i> Techniques used by 800-scorers</li>
+                    <li><i class="fas fa-check"></i> Applicable from your very next practice test</li>
+                </ul>
+                <a href="contact.html" class="dr-video-cta">
+                    <i class="fas fa-calendar-alt"></i> Book a Free Session
+                </a>
+            </div>
+            <div class="dr-video-right">
+                <div class="dr-video-frame">
+                    <div class="dr-video-glow"></div>
+                    <div class="dr-video-embed">
+                        <iframe
+                            src="https://www.youtube.com/embed/JkFAB_jVrhQ?si=ENriSixayfqfJF-m"
+                            title="Solve Hard SAT Math in Seconds — Dr. Syed"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -118,30 +378,64 @@
     </section>
 
     <!-- Teaching Philosophy Section -->
-    <section class="teaching-philosophy">
+    <section class="about-philosophy">
         <div class="container">
-            <h2>Teaching Philosophy</h2>
-            <div class="philosophy-grid">
-                <div class="philosophy-card">
-                    <div class="philosophy-icon">
+            <div class="about-philosophy-header">
+                <span class="about-philosophy-label">Teaching Philosophy</span>
+                <h2>How I Teach</h2>
+            </div>
+            <div class="about-philosophy-grid">
+                <div class="about-philosophy-card">
+                    <div class="about-philosophy-number">01</div>
+                    <div class="about-philosophy-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3>Understanding Over Memorization</h3>
                     <p>Focus on deep conceptual understanding rather than rote memorization of formulas and tricks.</p>
                 </div>
-                <div class="philosophy-card">
-                    <div class="philosophy-icon">
+                <div class="about-philosophy-card">
+                    <div class="about-philosophy-number">02</div>
+                    <div class="about-philosophy-icon">
                         <i class="fas fa-user-cog"></i>
                     </div>
                     <h3>Personalized Approach</h3>
                     <p>Every student learns differently. Customized teaching methods to match individual learning styles.</p>
                 </div>
-                <div class="philosophy-card">
-                    <div class="philosophy-icon">
-                        <i class="fas fa-target"></i>
+                <div class="about-philosophy-card">
+                    <div class="about-philosophy-number">03</div>
+                    <div class="about-philosophy-icon">
+                        <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>Results-Driven</h3>
-                    <p>Strategic focus on SAT patterns and question types to maximize score improvement efficiently.</p>
+                    <p>Strategic focus on building skills and understanding to maximize academic performance and exam scores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" style="display: block; text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2>Ready to Transform Your SAT Score?</h2>
+                <p>Join hundreds of students who have already achieved their dream scores with Dr. Syed's proven methodology. Your journey to 750+ starts here.</p>
+                <div class="cta-features" style="justify-content: center;">
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Free Assessment</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Score Guarantee</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Flexible Scheduling</span>
+                    </div>
+                </div>
+                <div class="cta-buttons" style="justify-content: center;">
+                    <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
+                    <a href="courses.html" class="btn btn-outline">View Courses</a>
                 </div>
             </div>
         </div>
@@ -152,29 +446,54 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Dr. Syeed SAT Prep</h3>
-                    <p>Expert SAT preparation from a PhD in Mathematics</p>
+                    <h3>Dr. Syed</h3>
+                    <p>Expert math tutoring from a PhD in Mathematics — Algebra to Calculus.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About Dr. Syed</a></li>
                         <li><a href="courses.html">Courses</a></li>
                         <li><a href="results.html">Results</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="courses.html">Algebra</a></li>
+                        <li><a href="courses.html">Geometry</a></li>
+                        <li><a href="courses.html">Pre Calculus</a></li>
+                        <li><a href="courses.html">Calculus AB & BC</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: info@drsyeed.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> tutor@drsyedmath.com</li>
+                        <li><i class="fas fa-phone"></i> +92 311 830 8324</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-8PM EST</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Dr. Syeed SAT Prep. All rights reserved.</p>
+                <p>&copy; 2025 Dr. Syed. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923118308324" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -4,12 +4,554 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results - Dr. Syeed SAT Prep</title>
-    <meta name="description" content="See real SAT score improvements from our students. Average +310 point increase with 98% success rate.">
+    <title>Results - Dr. Syed Waqas | Student Success</title>
+    <meta name="description" content="See real SAT score improvements from Dr. Syed's students. Average +310 point increase with 98% success rate.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="courses.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESULTS PAGE STYLES ===== */
+
+        /* --- Hero --- */
+        .results-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+            background: linear-gradient(135deg, #2a3f8a 0%, #344CC6 60%, #2a3f8a 100%);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .results-hero::before {
+            content: '';
+            position: absolute;
+            top: -120px; right: -120px;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .results-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px; left: -80px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .results-hero .container { position: relative; z-index: 1; }
+        .results-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 0.45rem 1.1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .results-hero h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+        }
+        .results-hero h1 em {
+            font-style: normal;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .results-hero p {
+            font-size: 1.0625rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 580px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* --- Stats Bar --- */
+        .results-stats-bar {
+            background: #ffffff;
+            padding: 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.07);
+        }
+        .results-stats-inner {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .results-stat-item {
+            flex: 1;
+            padding: 2.25rem 1.5rem;
+            text-align: center;
+            border-right: 1px solid #f1f5f9;
+            position: relative;
+        }
+        .results-stat-item:last-child { border-right: none; }
+        .results-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #344CC6;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+        .results-stat-number.gold { color: #f59e0b; }
+        .results-stat-label {
+            font-size: 0.8125rem;
+            color: #94a3b8;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* --- Score Cards --- */
+        .results-cards-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        .results-section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .results-section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #344CC6;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.75rem;
+        }
+        .results-section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 300;
+            color: #171717;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.75rem;
+        }
+        .results-section-header p {
+            color: #737373;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+        .results-grid-new {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .result-card-new {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .result-card-new:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(52,76,198,0.12);
+        }
+        .result-card-new img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .result-card-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+        }
+        .result-card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 0.875rem;
+        }
+        .result-scores-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.875rem;
+        }
+        .result-score-box {
+            flex: 1;
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 0.625rem;
+            text-align: center;
+        }
+        .result-score-label {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #94a3b8;
+            margin-bottom: 0.25rem;
+        }
+        .result-score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .score-before-new { color: #ef4444; }
+        .score-after-new { color: #16a34a; }
+        .result-arrow {
+            color: #344CC6;
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+        .result-gain-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            background: rgba(22,163,74,0.08);
+            border: 1px solid rgba(22,163,74,0.2);
+            color: #16a34a;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            padding: 0.375rem 0.875rem;
+            border-radius: 50px;
+        }
+
+        /* --- Video Testimonials --- */
+        .video-testimonials-section {
+            padding: 80px 0;
+            background: white;
+        }
+        .video-testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .video-testimonial-card {
+            border-radius: 20px;
+            overflow: hidden;
+            background: #0f172a;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .video-testimonial-player {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            background: #020617;
+            overflow: hidden;
+        }
+        .video-testimonial-player video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .video-testimonial-info {
+            padding: 1.25rem 1.5rem;
+            background: #0f172a;
+        }
+        .video-testimonial-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #fbbf24;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.4rem;
+        }
+        .video-testimonial-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.2rem;
+        }
+        .video-testimonial-score {
+            font-size: 0.8125rem;
+            color: #64748b;
+            font-weight: 300;
+        }
+
+        /* --- Score Journey --- */
+        .score-journey-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 50%, #f0f4ff 100%);
+        }
+        .score-journey-steps {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            align-items: center;
+            gap: 0;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            padding: 0 40px;
+        }
+        .journey-step {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(52,76,198,0.08);
+            border: 1px solid rgba(52,76,198,0.08);
+            position: relative;
+        }
+        .journey-step-number {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #344CC6, #2a3f8a);
+            color: white;
+            border-radius: 50%;
+            font-size: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .journey-step-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.875rem;
+            color: #344CC6;
+        }
+        .journey-step h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 0.5rem;
+        }
+        .journey-step p {
+            font-size: 0.875rem;
+            color: #737373;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        .journey-arrow {
+            font-size: 1.75rem;
+            color: #344CC6;
+            padding: 0 1rem;
+            opacity: 0.5;
+        }
+
+        /* --- College Acceptances --- */
+        .colleges-section {
+            padding: 80px 0;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .colleges-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('images/wide-angle-shot-schonbrunn-palace-vienna-austria-with-cloudy-blue-sky.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(2px) brightness(0.35);
+            transform: scale(1.05);
+            z-index: 0;
+        }
+        .colleges-section > * {
+            position: relative;
+            z-index: 1;
+        }
+        .colleges-section .results-section-label { color: #fbbf24; }
+        .colleges-section .results-section-header h2 { color: white; }
+        .colleges-section .results-section-header p { color: rgba(255,255,255,0.6); }
+        .colleges-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 2.5rem auto 0;
+            padding: 0 40px;
+        }
+        .college-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.9);
+            padding: 0.625rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .college-pill:hover { background: rgba(52,76,198,0.25); }
+        .college-pill i { color: #fbbf24; font-size: 0.75rem; }
+        .college-note {
+            margin-top: 2rem;
+            font-size: 0.8125rem;
+            color: rgba(255,255,255,0.35);
+            font-weight: 300;
+        }
+
+        /* --- Reviews Wall --- */
+        .reviews-wall-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding: 0 40px;
+        }
+        .review-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.75rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid #f1f5f9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .review-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(52,76,198,0.1);
+        }
+        .review-stars {
+            display: flex;
+            gap: 0.2rem;
+            margin-bottom: 1rem;
+        }
+        .review-stars i { color: #f59e0b; font-size: 0.875rem; }
+        .review-text {
+            font-size: 0.9375rem;
+            color: #374151;
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+        }
+        .review-author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .review-author-name {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: #171717;
+        }
+        .review-author-score {
+            font-size: 0.8125rem;
+            color: #16a34a;
+            font-weight: 500;
+        }
+
+        /* --- Results CTA --- */
+        .results-cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #344CC6 0%, #2a3f8a 100%);
+            text-align: center;
+            color: white;
+        }
+        .results-cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        .results-cta-section p {
+            font-size: 1.0625rem;
+            opacity: 0.82;
+            margin-bottom: 2.25rem;
+            font-weight: 300;
+        }
+        .results-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .results-cta-buttons .btn-white {
+            background: white;
+            color: #344CC6;
+            border: none;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .results-cta-buttons .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        .results-cta-buttons .btn-ghost {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .results-cta-buttons .btn-ghost:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .results-grid-new,
+            .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+            .score-journey-steps {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .journey-arrow { display: none; }
+            .video-testimonials-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .results-hero h1 { font-size: 2.25rem; }
+            .results-stats-inner { flex-wrap: wrap; }
+            .results-stat-item { flex: 0 0 50%; border-right: none; border-bottom: 1px solid #f1f5f9; }
+            .results-grid-new,
+            .reviews-grid { grid-template-columns: 1fr; padding: 0 20px; }
+            .results-stats-inner { padding: 0 20px; }
+            .score-journey-steps,
+            .video-testimonials-grid,
+            .colleges-grid { padding: 0 20px; }
+            .results-cta-section h2 { font-size: 1.875rem; }
+            .results-cta-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
 </head>
 
 <body>
@@ -18,25 +560,16 @@
         <nav class="navbar">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo">
-                    <h2>Dr. Syeed</h2>
-                    <span>SAT Prep</span>
+                    <h2>Dr. Syed</h2>
+                    <span>Math Tutoring</span>
                 </a>
                 <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="courses.html" class="nav-link">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="results.html" class="nav-link active">Results</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.html#pricing" class="nav-link">Pricing</a>
-                    </li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li class="nav-item"><a href="results.html" class="nav-link active">Results</a></li>
+                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li class="nav-item mobile-only"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="nav-buttons">
                     <a href="contact.html" class="nav-contact-btn">Contact</a>
@@ -50,206 +583,310 @@
         </nav>
     </header>
 
-    <!-- Results Hero Section -->
+    <!-- 1. Hero -->
     <section class="results-hero">
         <div class="container">
-            <div class="results-hero-content">
-                <span class="results-badge">Proven Success</span>
-                <h1>Real Students. <span class="text-highlight-green">Real Results.</span></h1>
-                <p>Our students consistently achieve remarkable score improvements with an average increase of <strong>+310 points</strong>.</p>
+            <div class="results-hero-badge">
+                <i class="fas fa-trophy"></i>
+                <span>Proven Results</span>
+            </div>
+            <h1>Real Students. <em>Real Results.</em></h1>
+            <p>Our students consistently achieve remarkable score improvements — with an average gain of <strong>+310 points</strong> and a 98% success rate across 500+ students worldwide.</p>
+        </div>
+    </section>
+
+    <!-- 2. Stats Bar -->
+    <div class="results-stats-bar">
+        <div class="results-stats-inner">
+            <div class="results-stat-item">
+                <div class="results-stat-number">500+</div>
+                <div class="results-stat-label">Students Helped</div>
+            </div>
+            <div class="results-stat-item">
+                <div class="results-stat-number gold">+310</div>
+                <div class="results-stat-label">Avg. Point Gain</div>
+            </div>
+            <div class="results-stat-item">
+                <div class="results-stat-number">98%</div>
+                <div class="results-stat-label">Score Improvement</div>
+            </div>
+            <div class="results-stat-item">
+                <div class="results-stat-number gold">1500+</div>
+                <div class="results-stat-label">Avg. Final Score</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Score Cards -->
+    <section class="results-cards-section">
+        <div class="results-section-header">
+            <span class="results-section-label">Score Transformations</span>
+            <h2>Before &amp; After</h2>
+            <p>Real score screenshots from real students — no cherry-picking</p>
+        </div>
+        <div class="results-grid-new">
+            <div class="result-card-new">
+                <img src="images/results/Untitled design-27.png" alt="Sarah's SAT Score">
+                <div class="result-card-body">
+                    <div class="result-card-name">Sarah Johnson</div>
+                    <div class="result-scores-row">
+                        <div class="result-score-box">
+                            <div class="result-score-label">Before</div>
+                            <div class="result-score-value score-before-new">1120</div>
+                        </div>
+                        <div class="result-arrow">→</div>
+                        <div class="result-score-box">
+                            <div class="result-score-label">After</div>
+                            <div class="result-score-value score-after-new">1300</div>
+                        </div>
+                    </div>
+                    <span class="result-gain-badge"><i class="fas fa-arrow-up"></i> +180 points</span>
+                </div>
+            </div>
+            <div class="result-card-new">
+                <img src="images/results/Untitled design-26.png" alt="Michael's SAT Score">
+                <div class="result-card-body">
+                    <div class="result-card-name">Michael Chen</div>
+                    <div class="result-scores-row">
+                        <div class="result-score-box">
+                            <div class="result-score-label">Before</div>
+                            <div class="result-score-value score-before-new">1080</div>
+                        </div>
+                        <div class="result-arrow">→</div>
+                        <div class="result-score-box">
+                            <div class="result-score-label">After</div>
+                            <div class="result-score-value score-after-new">1290</div>
+                        </div>
+                    </div>
+                    <span class="result-gain-badge"><i class="fas fa-arrow-up"></i> +210 points</span>
+                </div>
+            </div>
+            <div class="result-card-new">
+                <img src="images/results/Untitled design-23.png" alt="Emily's SAT Score">
+                <div class="result-card-body">
+                    <div class="result-card-name">Emily Rodriguez</div>
+                    <div class="result-scores-row">
+                        <div class="result-score-box">
+                            <div class="result-score-label">Before</div>
+                            <div class="result-score-value score-before-new">1150</div>
+                        </div>
+                        <div class="result-arrow">→</div>
+                        <div class="result-score-box">
+                            <div class="result-score-label">After</div>
+                            <div class="result-score-value score-after-new">1390</div>
+                        </div>
+                    </div>
+                    <span class="result-gain-badge"><i class="fas fa-arrow-up"></i> +240 points</span>
+                </div>
+            </div>
+            <div class="result-card-new">
+                <img src="images/results/Untitled design-24.png" alt="David's SAT Score">
+                <div class="result-card-body">
+                    <div class="result-card-name">David Lee</div>
+                    <div class="result-scores-row">
+                        <div class="result-score-box">
+                            <div class="result-score-label">Before</div>
+                            <div class="result-score-value score-before-new">1200</div>
+                        </div>
+                        <div class="result-arrow">→</div>
+                        <div class="result-score-box">
+                            <div class="result-score-label">After</div>
+                            <div class="result-score-value score-after-new">1370</div>
+                        </div>
+                    </div>
+                    <span class="result-gain-badge"><i class="fas fa-arrow-up"></i> +170 points</span>
+                </div>
+            </div>
+            <div class="result-card-new">
+                <img src="images/results/Untitled design-22.png" alt="Jessica's SAT Score">
+                <div class="result-card-body">
+                    <div class="result-card-name">Jessica Martinez</div>
+                    <div class="result-scores-row">
+                        <div class="result-score-box">
+                            <div class="result-score-label">Before</div>
+                            <div class="result-score-value score-before-new">1050</div>
+                        </div>
+                        <div class="result-arrow">→</div>
+                        <div class="result-score-box">
+                            <div class="result-score-label">After</div>
+                            <div class="result-score-value score-after-new">1420</div>
+                        </div>
+                    </div>
+                    <span class="result-gain-badge"><i class="fas fa-arrow-up"></i> +370 points</span>
+                </div>
+            </div>
+            <div class="result-card-new">
+                <img src="images/results/Untitled design-25.png" alt="Alex's SAT Score">
+                <div class="result-card-body">
+                    <div class="result-card-name">Alex Thompson</div>
+                    <div class="result-scores-row">
+                        <div class="result-score-box">
+                            <div class="result-score-label">Before</div>
+                            <div class="result-score-value score-before-new">1180</div>
+                        </div>
+                        <div class="result-arrow">→</div>
+                        <div class="result-score-box">
+                            <div class="result-score-label">After</div>
+                            <div class="result-score-value score-after-new">1450</div>
+                        </div>
+                    </div>
+                    <span class="result-gain-badge"><i class="fas fa-arrow-up"></i> +270 points</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SAT Results Section -->
-    <section class="results-section">
-      <div class="results-container">
-        <div class="results-header">
-          <span class="results-badge">Proven Results</span>
-          <h2 class="results-title">Real Students. <span class="gold">Real Results.</span></h2>
-          <p class="results-subtitle">Our students consistently achieve remarkable score improvements with an average increase of <strong>+310 points</strong>.</p>
+    <!-- 4. Video Testimonials -->
+    <section class="video-testimonials-section">
+        <div class="results-section-header">
+            <span class="results-section-label">Student Reviews</span>
+            <h2>Hear It From Them</h2>
+            <p>Unscripted video testimonials from students who made it happen</p>
         </div>
-
-        <div class="stats-bar">
-          <div class="stat-item">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">Students Helped</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number gold">+310</div>
-            <div class="stat-label">Avg. Point Gain</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">98%</div>
-            <div class="stat-label">Score Improvement</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number gold">1500+</div>
-            <div class="stat-label">Avg. Final Score</div>
-          </div>
+        <div class="video-testimonials-grid">
+            <div class="video-testimonial-card">
+                <div class="video-testimonial-player">
+                    <video controls playsinline poster="">
+                        <source src="video/VID-20260227-WA0006.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-testimonial-info">
+                    <div class="video-testimonial-tag"><i class="fas fa-star"></i> Student Review</div>
+                    <div class="video-testimonial-name">Ryan</div>
+                    <div class="video-testimonial-score">SAT Math Score: 750</div>
+                </div>
+            </div>
+            <div class="video-testimonial-card">
+                <div class="video-testimonial-player">
+                    <video controls playsinline poster="">
+                        <source src="video/Video.mov" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-testimonial-info">
+                    <div class="video-testimonial-tag"><i class="fas fa-star"></i> Student Review</div>
+                    <div class="video-testimonial-name">Louis Ibrahim</div>
+                    <div class="video-testimonial-score">SAT Math Score: 780</div>
+                </div>
+            </div>
         </div>
-
-        <div class="results-grid">
-          <!-- Card 1 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-27.png" alt="Sarah's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">Sarah Johnson</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1120</div>
-                </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1300</div>
-                </div>
-              </div>
-              <span class="improvement-badge">↑ +180 points</span>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-26.png" alt="Michael's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">Michael Chen</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1080</div>
-                </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1290</div>
-                </div>
-              </div>
-              <span class="improvement-badge">↑ +210 points</span>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-23.png" alt="Emily's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">Emily Rodriguez</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1150</div>
-                </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1390</div>
-                </div>
-              </div>
-              <span class="improvement-badge">↑ +240 points</span>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-24.png" alt="David's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">David Lee</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1200</div>
-                </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1370</div>
-                </div>
-              </div>
-              <span class="improvement-badge">↑ +170 points</span>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-22.png" alt="Jessica's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">Jessica Martinez</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1050</div>
-                </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1420</div>
-                </div>
-              </div>
-              <span class="improvement-badge">↑ +370 points</span>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-25.png" alt="Alex's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">Alex Thompson</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1180</div>
-                </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1450</div>
-                </div>
-              </div>
-              <span class="improvement-badge">↑ +270 points</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="results-cta">
-          <p>Ready to achieve your target score?</p>
-          <button class="cta-button">Start Your SAT Journey →</button>
-        </div>
-      </div>
     </section>
 
-    <!-- Success Stories Section -->
-    <section class="success-stories">
+    <!-- 5. Score Journey -->
+    <section class="score-journey-section">
+        <div class="results-section-header">
+            <span class="results-section-label">The Process</span>
+            <h2>Your Score Journey</h2>
+            <p>A simple 3-step path from where you are to where you want to be</p>
+        </div>
+        <div class="score-journey-steps">
+            <div class="journey-step">
+                <div class="journey-step-number">1</div>
+                <div class="journey-step-icon"><i class="fas fa-clipboard-list"></i></div>
+                <h3>Free Diagnostic</h3>
+                <p>We identify your exact weak points with a targeted assessment so no time is wasted.</p>
+            </div>
+            <div class="journey-arrow"><i class="fas fa-chevron-right"></i></div>
+            <div class="journey-step">
+                <div class="journey-step-number">2</div>
+                <div class="journey-step-icon"><i class="fas fa-route"></i></div>
+                <h3>Custom Study Plan</h3>
+                <p>A personalized schedule built around your target score, timeline, and learning style.</p>
+            </div>
+            <div class="journey-arrow"><i class="fas fa-chevron-right"></i></div>
+            <div class="journey-step">
+                <div class="journey-step-number">3</div>
+                <div class="journey-step-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Score Boost</h3>
+                <p>Live sessions, practice tests, and feedback loops until you hit your target score.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. College Acceptances -->
+    <section class="colleges-section">
+        <div class="results-section-header">
+            <span class="results-section-label">Where Students Go</span>
+            <h2>College Acceptances</h2>
+            <p>Schools where our students have been admitted after working with Dr. Syed</p>
+        </div>
+        <div class="colleges-grid">
+            <div class="college-pill"><i class="fas fa-university"></i> MIT</div>
+            <div class="college-pill"><i class="fas fa-university"></i> Harvard University</div>
+            <div class="college-pill"><i class="fas fa-university"></i> Stanford University</div>
+            <div class="college-pill"><i class="fas fa-university"></i> Yale University</div>
+            <div class="college-pill"><i class="fas fa-university"></i> Princeton University</div>
+            <div class="college-pill"><i class="fas fa-university"></i> Columbia University</div>
+            <div class="college-pill"><i class="fas fa-university"></i> University of Michigan</div>
+            <div class="college-pill"><i class="fas fa-university"></i> UCLA</div>
+            <div class="college-pill"><i class="fas fa-university"></i> NYU</div>
+            <div class="college-pill"><i class="fas fa-university"></i> UC Berkeley</div>
+            <div class="college-pill"><i class="fas fa-university"></i> Georgetown University</div>
+            <div class="college-pill"><i class="fas fa-university"></i> Boston University</div>
+        </div>
+        <p class="college-note">* Based on student-reported college acceptances after completing Dr. Syed's program.</p>
+    </section>
+
+    <!-- 7. Reviews Wall -->
+    <section class="reviews-wall-section">
+        <div class="results-section-header">
+            <span class="results-section-label">What Students Say</span>
+            <h2>Student Reviews</h2>
+            <p>Honest feedback from students who transformed their math skills</p>
+        </div>
+        <div class="reviews-grid">
+            <!-- Jack -->
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"I was stuck at 650 for months and had almost given up. Dr. Syed broke down every concept so clearly — after just a few weeks, everything clicked. I walked out of the SAT with a 760 in Math. Couldn't have done it without him!"</p>
+                <div class="review-author">
+                    <img src="images/WhatsApp Image 2026-03-17 at 21.05.29.jpeg" class="review-author-avatar" alt="Jack">
+                    <div>
+                        <div class="review-author-name">Jack</div>
+                        <div class="review-author-score">650 → 760 SAT Math</div>
+                    </div>
+                </div>
+            </div>
+            <!-- M. Muzammil -->
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"I was already scoring well, but I knew I could do better. Dr. Syed helped me close the gap in my weak areas — advanced algebra and data analysis. Going from 740 to 790 felt incredible. His structured approach makes all the difference."</p>
+                <div class="review-author">
+                    <img src="images/WhatsApp Image 2026-03-16 at 19.13.16.jpeg" class="review-author-avatar" alt="M. Muzammil">
+                    <div>
+                        <div class="review-author-name">M. Muzammil</div>
+                        <div class="review-author-score">740 → 790 SAT Math</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Karthik -->
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Scoring 800 on SAT Math was a dream, and Dr. Syed made it a reality. He doesn't just teach — he makes you truly understand math at a deep level. The way he explains problem-solving strategies is unlike anything I've experienced. Perfect score, zero regrets!"</p>
+                <div class="review-author">
+                    <img src="images/WhatsApp Image 2026-03-24 at 22.30.38.jpeg" class="review-author-avatar" alt="Karthik">
+                    <div>
+                        <div class="review-author-name">Karthik</div>
+                        <div class="review-author-score">800 (Perfect Score) SAT Math</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CTA -->
+    <section class="results-cta-section">
         <div class="container">
-            <h2>Student Success Stories</h2>
-            <div class="stories-grid">
-                <div class="story-card">
-                    <div class="story-content">
-                        <p>"Dr. Syeed helped me improve my SAT math score from 580 to 750! His teaching style made complex concepts easy to understand."</p>
-                    </div>
-                    <div class="story-author">
-                        <h4>Sarah Johnson</h4>
-                        <span>Score: 750 Math</span>
-                    </div>
-                </div>
-                <div class="story-card">
-                    <div class="story-content">
-                        <p>"The personalized attention and expert guidance from Dr. Syeed was exactly what I needed. Highly recommend!"</p>
-                    </div>
-                    <div class="story-author">
-                        <h4>Michael Chen</h4>
-                        <span>Score: 780 Math</span>
-                    </div>
-                </div>
-                <div class="story-card">
-                    <div class="story-content">
-                        <p>"Thanks to Dr. Syeed, I got into my dream college! His calculus expertise made the advanced math sections manageable."</p>
-                    </div>
-                    <div class="story-author">
-                        <h4>Emily Rodriguez</h4>
-                        <span>Score: 800 Math</span>
-                    </div>
-                </div>
+            <h2>Your Score Transformation Starts Here</h2>
+            <p>Join 500+ students who achieved their target scores with Dr. Syed's proven methodology.</p>
+            <div class="results-cta-buttons">
+                <a href="contact.html" class="btn-white"><i class="fas fa-calendar-alt"></i> Book Free Consultation</a>
+                <a href="pricing.html" class="btn-ghost"><i class="fas fa-tag"></i> View Pricing Plans</a>
             </div>
         </div>
     </section>
@@ -259,29 +896,54 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Dr. Syeed SAT Prep</h3>
-                    <p>Expert SAT preparation from a PhD in Mathematics</p>
+                    <h3>Dr. Syed</h3>
+                    <p>Expert math tutoring from a PhD in Mathematics — Algebra to Calculus.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About Dr. Syed</a></li>
                         <li><a href="courses.html">Courses</a></li>
                         <li><a href="results.html">Results</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="courses.html">Algebra</a></li>
+                        <li><a href="courses.html">Geometry</a></li>
+                        <li><a href="courses.html">Pre Calculus</a></li>
+                        <li><a href="courses.html">Calculus AB &amp; BC</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: info@drsyeed.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> tutor@drsyedmath.com</li>
+                        <li><i class="fas fa-phone"></i> +92 311 830 8324</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Dr. Syeed SAT Prep. All rights reserved.</p>
+                <p>&copy; 2025 Dr. Syed. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923118308324" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

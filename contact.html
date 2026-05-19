@@ -4,12 +4,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Dr. Syeed SAT Prep</title>
-    <meta name="description" content="Get in touch with Dr. Syeed for SAT prep tutoring. Book a free consultation and start your journey to a higher SAT score.">
+    <title>Contact - Dr. Syed Waqas | Book a Free SAT Consultation</title>
+    <meta name="description" content="Contact Dr. Syed Waqas for expert SAT Math tutoring. Book a free consultation today and start your journey to a higher score.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="courses.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CONTACT PAGE — prefixed with cnt- to avoid conflicts ===== */
+
+        /* Hero */
+        .cnt-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+            background: linear-gradient(135deg, #1e2978 0%, #2a3f8a 40%, #344CC6 100%);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .cnt-hero::before {
+            content: '';
+            position: absolute;
+            top: -150px; right: -150px;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .cnt-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px; left: -100px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(251,191,36,0.09) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .cnt-hero .container { position: relative; z-index: 1; }
+
+        .cnt-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: white;
+            padding: 0.45rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .cnt-hero h1 {
+            font-size: 2.875rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            color: white;
+        }
+        .cnt-hero h1 em {
+            font-style: normal;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cnt-hero p {
+            font-size: 1.0625rem;
+            color: rgba(255,255,255,0.78);
+            max-width: 520px;
+            margin: 0 auto 2.25rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        .cnt-hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .cnt-hero-stat-num {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #fbbf24;
+            line-height: 1;
+        }
+        .cnt-hero-stat-label {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.55);
+            font-weight: 400;
+            margin-top: 0.35rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Main Section */
+        .cnt-main {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        .cnt-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+            align-items: start;
+        }
+
+        /* ── Left info column ── */
+        .cnt-info-col h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 0.625rem;
+            letter-spacing: -0.025em;
+        }
+        .cnt-info-col > p {
+            font-size: 0.9375rem;
+            color: #737373;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 1.75rem;
+        }
+
+        /* Single unified contact card */
+        .cnt-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: white;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 1.125rem 1.375rem;
+            margin-bottom: 0.875rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .cnt-card:hover {
+            border-color: #344CC6;
+            box-shadow: 0 8px 28px rgba(52,76,198,0.12);
+            transform: translateY(-2px);
+        }
+        .cnt-card-ico {
+            width: 46px;
+            height: 46px;
+            min-width: 46px;
+            background: linear-gradient(135deg, rgba(52,76,198,0.1), rgba(52,76,198,0.05));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cnt-card-ico i {
+            font-size: 1.125rem;
+            color: #344CC6;
+        }
+        .cnt-card-txt { flex: 1; }
+        .cnt-card-txt strong {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 0.2rem;
+        }
+        .cnt-card-txt span {
+            display: block;
+            font-size: 0.8125rem;
+            color: #64748b;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* WhatsApp card */
+        .cnt-card-wa {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-color: transparent;
+        }
+        .cnt-card-wa .cnt-card-ico {
+            background: rgba(255,255,255,0.2);
+        }
+        .cnt-card-wa .cnt-card-ico i,
+        .cnt-card-wa .cnt-card-txt strong,
+        .cnt-card-wa .cnt-card-txt span {
+            color: white;
+        }
+        .cnt-card-wa:hover {
+            border-color: transparent;
+            box-shadow: 0 8px 28px rgba(37,211,102,0.3);
+        }
+
+        /* ── Right form column ── */
+        .cnt-form-box {
+            background: white;
+            border-radius: 24px;
+            padding: 2.5rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+        }
+        .cnt-form-box h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.02em;
+        }
+        .cnt-form-box > p {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            font-weight: 300;
+            margin-bottom: 1.75rem;
+        }
+        .cnt-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .cnt-field {
+            margin-bottom: 1.125rem;
+        }
+        .cnt-field label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.45rem;
+            letter-spacing: 0.02em;
+        }
+        .cnt-field input,
+        .cnt-field select,
+        .cnt-field textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #171717;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #fafbfc;
+            transition: all 0.25s ease;
+            outline: none;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+        }
+        .cnt-field input:focus,
+        .cnt-field select:focus,
+        .cnt-field textarea:focus {
+            border-color: #344CC6;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(52,76,198,0.08);
+        }
+        .cnt-field input::placeholder,
+        .cnt-field textarea::placeholder {
+            color: #94a3b8;
+            font-weight: 300;
+        }
+        .cnt-field select {
+            cursor: pointer;
+            color: #374151;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2394a3b8' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+        .cnt-field textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .cnt-submit {
+            width: 100%;
+            padding: 0.95rem;
+            background: linear-gradient(135deg, #344CC6 0%, #2a3f8a 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            letter-spacing: 0.01em;
+            margin-top: 0.25rem;
+        }
+        .cnt-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(52,76,198,0.42);
+        }
+        .cnt-form-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 300;
+            margin-top: 0.875rem;
+            margin-bottom: 0;
+        }
+        .cnt-form-note i { color: #16a34a; margin-right: 0.25rem; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .cnt-grid { grid-template-columns: 1fr; gap: 2rem; padding: 0 20px; }
+            .cnt-hero h1 { font-size: 2.1rem; }
+            .cnt-hero-stats { gap: 2rem; }
+            .cnt-form-row { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .cnt-form-box { padding: 1.5rem; }
+        }
+    </style>
 </head>
 
 <body>
@@ -18,160 +326,149 @@
         <nav class="navbar">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo">
-                    <h2>Dr. Syeed</h2>
-                    <span>SAT Prep</span>
+                    <h2>Dr. Syed</h2>
+                    <span>Math Tutoring</span>
                 </a>
                 <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="courses.html" class="nav-link">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="results.html" class="nav-link">Results</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.html#pricing" class="nav-link">Pricing</a>
-                    </li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li class="nav-item"><a href="results.html" class="nav-link">Results</a></li>
+                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li class="nav-item mobile-only"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="nav-buttons">
                     <a href="contact.html" class="nav-contact-btn active">Contact</a>
                 </div>
                 <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Contact Hero Section -->
-    <section class="contact-hero">
+    <!-- Hero -->
+    <section class="cnt-hero">
         <div class="container">
-            <div class="contact-hero-content">
-                <span class="contact-badge">Get in Touch</span>
-                <h1>Start Your <span class="text-highlight-green">SAT Success Journey</span></h1>
-                <p>Book a free consultation and discover how Dr. Syeed can help you achieve your target SAT score</p>
+            <div class="cnt-hero-badge"><i class="fas fa-calendar-check"></i> Free Consultation</div>
+            <h1>Let's Get Your Score <em>Where It Belongs</em></h1>
+            <p>Book a free 30-minute consultation with Dr. Syed. We'll map out exactly where you are, where you need to be, and how to get there.</p>
+            <div class="cnt-hero-stats">
+                <div>
+                    <div class="cnt-hero-stat-num">500+</div>
+                    <div class="cnt-hero-stat-label">Students Helped</div>
+                </div>
+                <div>
+                    <div class="cnt-hero-stat-num">+310</div>
+                    <div class="cnt-hero-stat-label">Avg. Score Gain</div>
+                </div>
+                <div>
+                    <div class="cnt-hero-stat-num">98%</div>
+                    <div class="cnt-hero-stat-label">Success Rate</div>
+                </div>
+                <div>
+                    <div class="cnt-hero-stat-num">24h</div>
+                    <div class="cnt-hero-stat-label">Response Time</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Content Section -->
-    <section class="contact-content">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Let's Connect</h2>
-                    <p>Have questions about SAT prep? Ready to start your journey to higher scores? We're here to help!</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Email Us</h3>
-                                <p>info@drsyeed.com</p>
-                                <p>We respond within 24 hours</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Call Us</h3>
-                                <p>+1 (555) 123-4567</p>
-                                <p>Mon-Fri: 9AM-6PM EST</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-video"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Online Sessions</h3>
-                                <p>Zoom, Skype, Google Meet</p>
-                                <p>Learn from anywhere</p>
-                            </div>
-                        </div>
+    <!-- Contact Main -->
+    <section class="cnt-main">
+        <div class="cnt-grid">
+
+            <!-- Left: Info -->
+            <div class="cnt-info-col">
+                <h2>Get in Touch</h2>
+                <p>Reach out via any channel below. Dr. Syed personally responds to every inquiry.</p>
+
+                <a class="cnt-card" href="mailto:tutor@drsyedmath.com">
+                    <div class="cnt-card-ico"><i class="fas fa-envelope"></i></div>
+                    <div class="cnt-card-txt">
+                        <strong>Email Us</strong>
+                        <span>tutor@drsyedmath.com</span>
+                        <span>We respond within 24 hours</span>
+                    </div>
+                </a>
+
+                <a class="cnt-card" href="tel:+923118308324">
+                    <div class="cnt-card-ico"><i class="fas fa-phone-alt"></i></div>
+                    <div class="cnt-card-txt">
+                        <strong>Call Us</strong>
+                        <span>+92 311 830 8324</span>
+                        <span>Available for calls & WhatsApp</span>
+                    </div>
+                </a>
+
+                <a class="cnt-card cnt-card-wa" href="https://wa.me/923118308324" target="_blank">
+                    <div class="cnt-card-ico"><i class="fab fa-whatsapp"></i></div>
+                    <div class="cnt-card-txt">
+                        <strong>WhatsApp</strong>
+                        <span>+92 311 830 8324</span>
+                        <span>Quick responses guaranteed</span>
+                    </div>
+                </a>
+
+                <div class="cnt-card">
+                    <div class="cnt-card-ico"><i class="fas fa-video"></i></div>
+                    <div class="cnt-card-txt">
+                        <strong>Online Sessions</strong>
+                        <span>Zoom · Skype · Google Meet</span>
+                        <span>Learn from anywhere in the world</span>
                     </div>
                 </div>
-                
-                <div class="contact-form">
-                    <h3>Book a Free Consultation</h3>
-                    <form class="consultation-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="cnt-form-box">
+                <h3>Book a Free Consultation</h3>
+                <p>Fill in the form and we'll get back to you within 24 hours.</p>
+                <form id="page-contact-form">
+                    <div class="cnt-form-row">
+                        <div class="cnt-field">
+                            <label>Full Name</label>
+                            <input type="text" name="name" placeholder="Your name" required>
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                        <div class="cnt-field">
+                            <label>Email Address</label>
+                            <input type="email" name="email" placeholder="you@email.com" required>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Your Phone" required>
+                    </div>
+                    <div class="cnt-form-row">
+                        <div class="cnt-field">
+                            <label>Phone / WhatsApp</label>
+                            <input type="tel" name="phone" placeholder="+1 (555) 000-0000">
                         </div>
-                        <div class="form-group">
-                            <select required>
-                                <option value="">Select Your Goal</option>
-                                <option value="1200+">1200+ Score</option>
-                                <option value="1300+">1300+ Score</option>
-                                <option value="1400+">1400+ Score</option>
-                                <option value="1500+">1500+ Score</option>
-                                <option value="other">Other</option>
+                        <div class="cnt-field">
+                            <label>Course Interest</label>
+                            <select name="course" required>
+                                <option value="">Select a course...</option>
+                                <option value="sat-math">SAT Math Prep</option>
+                                <option value="algebra">Algebra</option>
+                                <option value="geometry">Geometry</option>
+                                <option value="precalculus">Pre Calculus</option>
+                                <option value="calculus-ab">Calculus AB</option>
+                                <option value="calculus-bc">Calculus BC</option>
+                                <option value="multiple">Multiple Courses</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <textarea placeholder="Tell us about your SAT goals..." rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Book Free Consultation</button>
-                    </form>
-                </div>
+                    </div>
+                    <div class="cnt-field">
+                        <label>Current SAT Score (if known)</label>
+                        <input type="text" name="sat_score" placeholder="e.g. 620 or Not yet taken">
+                    </div>
+                    <div class="cnt-field">
+                        <label>Your Message</label>
+                        <textarea name="message" placeholder="Tell us about your goals and timeline..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="cnt-submit">
+                        <i class="fas fa-paper-plane"></i> Send My Consultation Request
+                    </button>
+                    <p class="cnt-form-note"><i class="fas fa-lock"></i> Your information is 100% private. No spam, ever.</p>
+                </form>
             </div>
-        </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>How do I get started with Dr. Syeed?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Simply fill out the consultation form on this page. We'll schedule a free 30-minute consultation to discuss your goals and create a personalized study plan.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What is the average score improvement?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our students typically see an average improvement of 150-200 points on their SAT math scores, with many achieving 300+ point improvements.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Do you offer online tutoring?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! All our tutoring sessions are conducted online via Zoom, Skype, or Google Meet with digital whiteboards for interactive learning.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -180,29 +477,56 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Dr. Syeed SAT Prep</h3>
-                    <p>Expert SAT preparation from a PhD in Mathematics</p>
+                    <h3>Dr. Syed</h3>
+                    <p>Expert math tutoring from a PhD in Mathematics — Algebra to Calculus.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About Dr. Syed</a></li>
                         <li><a href="courses.html">Courses</a></li>
                         <li><a href="results.html">Results</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="courses.html">SAT Math Prep</a></li>
+                        <li><a href="courses.html">Algebra</a></li>
+                        <li><a href="courses.html">Geometry</a></li>
+                        <li><a href="courses.html">Pre Calculus</a></li>
+                        <li><a href="courses.html">Calculus AB & BC</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: info@drsyeed.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> tutor@drsyedmath.com</li>
+                        <li><i class="fas fa-phone"></i> +92 311 830 8324</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp Available</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Dr. Syeed SAT Prep. All rights reserved.</p>
+                <p>&copy; 2025 Dr. Syed. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923118308324" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Dr. Syed SAT Prep</title>
+    <meta name="description" content="Flexible pricing options for expert SAT math tutoring with Dr. Syed. Choose from Basic, Comprehensive, or Intensive prep plans.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="courses.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== PRICING PAGE ===== */
+
+        /* Hero */
+        .p-hero {
+            padding-top: 130px;
+            padding-bottom: 70px;
+            background: linear-gradient(135deg, #2a3f8a 0%, #344CC6 60%, #2a3f8a 100%);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .p-hero::before {
+            content: '';
+            position: absolute;
+            top: -120px; right: -120px;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .p-hero .container { position: relative; z-index: 1; }
+        .p-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 0.45rem 1.1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .p-hero h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            color: white;
+        }
+        .p-hero h1 em {
+            font-style: normal;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .p-hero p {
+            font-size: 1.0625rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 580px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* Trust Bar */
+        .p-trust-bar {
+            background: white;
+            border-bottom: 1px solid #f1f5f9;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .p-trust-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .p-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 1.25rem 0;
+        }
+        .p-trust-item i {
+            font-size: 1.125rem;
+            color: #344CC6;
+        }
+        .p-trust-item span {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        .p-trust-divider {
+            width: 1px;
+            height: 28px;
+            background: #e2e8f0;
+        }
+
+        /* Pricing Cards */
+        .p-cards-section {
+            padding: 80px 0 60px;
+            background: #f8fafc;
+        }
+        .p-section-label {
+            display: block;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #344CC6;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+        }
+        .p-section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            font-weight: 300;
+            color: #171717;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.625rem;
+        }
+        .p-section-sub {
+            text-align: center;
+            color: #737373;
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+        }
+        .p-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+            align-items: start;
+        }
+        .p-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.25rem;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .p-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 50px rgba(52,76,198,0.1);
+        }
+        .p-card-featured {
+            background: linear-gradient(160deg, #2a3f8a 0%, #344CC6 100%);
+            border-color: transparent;
+            transform: scale(1.04);
+            box-shadow: 0 20px 60px rgba(52,76,198,0.3);
+        }
+        .p-card-featured:hover {
+            transform: scale(1.04) translateY(-4px);
+            box-shadow: 0 28px 70px rgba(52,76,198,0.4);
+        }
+        .p-card-most-popular {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            color: #111;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+        }
+        .p-card-plan {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #344CC6;
+            margin-bottom: 0.5rem;
+        }
+        .p-card-featured .p-card-plan { color: rgba(255,255,255,0.7); }
+        .p-card-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 0.375rem;
+        }
+        .p-card-featured .p-card-name { color: white; }
+        .p-card-duration {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        .p-card-featured .p-card-duration { color: rgba(255,255,255,0.6); }
+        .p-card-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #171717;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+        .p-card-featured .p-card-price { color: white; }
+        .p-card-price sup {
+            font-size: 1.25rem;
+            font-weight: 500;
+            vertical-align: super;
+        }
+        .p-card-price-original {
+            font-size: 1rem;
+            color: #94a3b8;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-left: 0.5rem;
+        }
+        .p-card-featured .p-card-price-original { color: rgba(255,255,255,0.45); }
+        .p-card-divider {
+            height: 1px;
+            background: #f1f5f9;
+            margin: 1.5rem 0;
+        }
+        .p-card-featured .p-card-divider { background: rgba(255,255,255,0.15); }
+        .p-card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .p-card-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: #374151;
+            font-weight: 300;
+        }
+        .p-card-featured .p-card-features li { color: rgba(255,255,255,0.85); }
+        .p-card-features li i {
+            width: 20px;
+            height: 20px;
+            background: rgba(22,163,74,0.1);
+            border: 1px solid rgba(22,163,74,0.25);
+            color: #16a34a;
+            border-radius: 50%;
+            font-size: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .p-card-featured .p-card-features li i {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.3);
+            color: #fbbf24;
+        }
+        .p-card-btn {
+            display: block;
+            width: 100%;
+            padding: 0.9rem;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid #344CC6;
+            color: #344CC6;
+            background: transparent;
+        }
+        .p-card-btn:hover {
+            background: #344CC6;
+            color: white;
+        }
+        .p-card-btn-featured {
+            background: white;
+            color: #344CC6;
+            border-color: white;
+        }
+        .p-card-btn-featured:hover {
+            background: #f0f4ff;
+            color: #2a3f8a;
+        }
+
+        /* What's Included */
+        .p-included-section {
+            padding: 80px 0;
+            background: white;
+        }
+        .p-included-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 3rem auto 0;
+            padding: 0 40px;
+        }
+        .p-included-card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            border: 1px solid #f1f5f9;
+            transition: transform 0.3s ease;
+        }
+        .p-included-card:hover { transform: translateY(-3px); }
+        .p-included-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, rgba(52,76,198,0.1), rgba(52,76,198,0.05));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .p-included-icon i { font-size: 1.25rem; color: #344CC6; }
+        .p-included-card h3 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 0.5rem;
+        }
+        .p-included-card p {
+            font-size: 0.8125rem;
+            color: #737373;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Guarantee */
+        .p-guarantee {
+            padding: 60px 0;
+            background: #f0f7f0;
+            text-align: center;
+        }
+        .p-guarantee-inner {
+            max-width: 620px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .p-guarantee-badge {
+            width: 80px;
+            height: 80px;
+            background: #16a34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+        .p-guarantee-badge i { font-size: 2rem; color: white; }
+        .p-guarantee h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #14532d;
+            margin-bottom: 0.75rem;
+        }
+        .p-guarantee p {
+            font-size: 0.9375rem;
+            color: #166534;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* Mini Testimonials */
+        .p-testimonials {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        .p-testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 3rem auto 0;
+            padding: 0 40px;
+        }
+        .p-testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.75rem;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        .p-testimonial-stars {
+            display: flex;
+            gap: 0.2rem;
+            margin-bottom: 0.875rem;
+        }
+        .p-testimonial-stars i { color: #f59e0b; font-size: 0.8rem; }
+        .p-testimonial-quote {
+            font-size: 0.9375rem;
+            color: #374151;
+            font-style: italic;
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 1.25rem;
+        }
+        .p-testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .p-testimonial-avatar {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, #344CC6, #2a3f8a);
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .p-testimonial-name { font-size: 0.875rem; font-weight: 600; color: #171717; }
+        .p-testimonial-plan { font-size: 0.75rem; color: #344CC6; font-weight: 500; }
+
+        /* FAQ */
+        .p-faq-section {
+            padding: 80px 0;
+            background: white;
+        }
+        .p-faq-list {
+            max-width: 760px;
+            margin: 3rem auto 0;
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .p-faq-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .p-faq-item.open { border-color: #344CC6; }
+        .p-faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            gap: 1rem;
+        }
+        .p-faq-question h3 {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: #171717;
+            margin: 0;
+        }
+        .p-faq-question i {
+            color: #344CC6;
+            font-size: 0.875rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        .p-faq-item.open .p-faq-question i { transform: rotate(180deg); }
+        .p-faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.3s ease;
+        }
+        .p-faq-answer p {
+            padding: 0 1.5rem 1.25rem;
+            font-size: 0.9rem;
+            color: #737373;
+            font-weight: 300;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* CTA */
+        .p-cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #344CC6 0%, #2a3f8a 100%);
+            text-align: center;
+            color: white;
+        }
+        .p-cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        .p-cta-section p {
+            font-size: 1.0625rem;
+            opacity: 0.82;
+            margin-bottom: 2.25rem;
+            font-weight: 300;
+        }
+        .p-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .p-cta-btn-white {
+            background: white;
+            color: #344CC6;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .p-cta-btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+        .p-cta-btn-ghost {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .p-cta-btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .p-cards-grid, .p-included-grid, .p-testimonials-grid { grid-template-columns: 1fr 1fr; }
+            .p-card-featured { transform: scale(1); }
+            .p-card-featured:hover { transform: translateY(-4px); }
+        }
+        @media (max-width: 768px) {
+            .p-hero h1 { font-size: 2.25rem; }
+            .p-cards-grid, .p-testimonials-grid { grid-template-columns: 1fr; padding: 0 20px; }
+            .p-included-grid { grid-template-columns: 1fr 1fr; padding: 0 20px; }
+            .p-faq-list, .p-guarantee-inner { padding: 0 20px; }
+            .p-trust-inner { gap: 1.5rem; }
+            .p-trust-divider { display: none; }
+            .p-cta-section h2 { font-size: 1.875rem; }
+            .p-cta-buttons { flex-direction: column; align-items: center; }
+        }
+        @media (max-width: 480px) {
+            .p-included-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <h2>Dr. Syed</h2>
+                    <span>Math Tutoring</span>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li class="nav-item"><a href="results.html" class="nav-link">Results</a></li>
+                    <li class="nav-item"><a href="pricing.html" class="nav-link active">Pricing</a></li>
+                    <li class="nav-item mobile-only"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="contact.html" class="nav-contact-btn">Contact</a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 1. Hero -->
+    <section class="p-hero">
+        <div class="container">
+            <div class="p-hero-badge"><i class="fas fa-tag"></i> Simple, Transparent Pricing</div>
+            <h1>Invest in Your <em>Future Score</em></h1>
+            <p>Choose the plan that fits your goals and timeline. Every plan includes direct access to Dr. Syed's expert guidance, proven strategies, and real results.</p>
+        </div>
+    </section>
+
+    <!-- 3. Pricing Cards -->
+    <section class="p-cards-section">
+        <span class="p-section-label">Choose Your Plan</span>
+        <h2 class="p-section-title">Flexible Plans for Every Goal</h2>
+        <div class="p-cards-grid" style="margin-top: 2.5rem;">
+            <!-- Basic -->
+            <div class="p-card">
+                <div class="p-card-plan">Starter</div>
+                <div class="p-card-name">Basic Prep</div>
+                <div class="p-card-duration"><i class="fas fa-clock" style="font-size:0.75rem;"></i> 4 weeks</div>
+                <div class="p-card-price"><sup>$</sup>299</div>
+                <div class="p-card-divider"></div>
+                <ul class="p-card-features">
+                    <li><i class="fas fa-check"></i> 8 live sessions (2 hrs each)</li>
+                    <li><i class="fas fa-check"></i> Access to practice materials</li>
+                    <li><i class="fas fa-check"></i> Email support</li>
+                    <li><i class="fas fa-check"></i> Progress tracking</li>
+                </ul>
+                <a href="contact.html" class="p-card-btn">Get Started</a>
+            </div>
+            <!-- Comprehensive (Featured) -->
+            <div class="p-card p-card-featured">
+                <div class="p-card-most-popular">⭐ Most Popular</div>
+                <div class="p-card-plan">Recommended</div>
+                <div class="p-card-name">Comprehensive Prep</div>
+                <div class="p-card-duration"><i class="fas fa-clock" style="font-size:0.75rem;"></i> 8 weeks</div>
+                <div class="p-card-price"><sup>$</sup>599 <span class="p-card-price-original">$799</span></div>
+                <div class="p-card-divider"></div>
+                <ul class="p-card-features">
+                    <li><i class="fas fa-check"></i> 16 live sessions (2 hrs each)</li>
+                    <li><i class="fas fa-check"></i> Full practice tests with review</li>
+                    <li><i class="fas fa-check"></i> Priority email support</li>
+                    <li><i class="fas fa-check"></i> 1-on-1 strategy session</li>
+                    <li><i class="fas fa-check"></i> Custom study plan</li>
+                </ul>
+                <a href="contact.html" class="p-card-btn p-card-btn-featured">Get Started</a>
+            </div>
+            <!-- Intensive -->
+            <div class="p-card">
+                <div class="p-card-plan">Premium</div>
+                <div class="p-card-name">Intensive Prep</div>
+                <div class="p-card-duration"><i class="fas fa-clock" style="font-size:0.75rem;"></i> 12 weeks</div>
+                <div class="p-card-price"><sup>$</sup>999</div>
+                <div class="p-card-divider"></div>
+                <ul class="p-card-features">
+                    <li><i class="fas fa-check"></i> 24 live sessions (2 hrs each)</li>
+                    <li><i class="fas fa-check"></i> Unlimited practice tests</li>
+                    <li><i class="fas fa-check"></i> 24/7 support</li>
+                    <li><i class="fas fa-check"></i> Weekly 1-on-1 sessions</li>
+                    <li><i class="fas fa-check"></i> Score guarantee</li>
+                </ul>
+                <a href="contact.html" class="p-card-btn">Get Started</a>
+            </div>
+        </div>
+        <!-- Stats Bar -->
+        <div class="p-trust-inner" style="margin-top: 2.5rem;">
+            <div class="p-trust-item"><i class="fas fa-users"></i><span>500+ Students Enrolled</span></div>
+            <div class="p-trust-divider"></div>
+            <div class="p-trust-item"><i class="fas fa-star" style="color:#f59e0b;"></i><span>4.9 / 5 Average Rating</span></div>
+            <div class="p-trust-divider"></div>
+            <div class="p-trust-item"><i class="fas fa-chart-line"></i><span>+310 Avg. Score Gain</span></div>
+            <div class="p-trust-divider"></div>
+            <div class="p-trust-item"><i class="fas fa-graduation-cap"></i><span>PhD-Level Instruction</span></div>
+        </div>
+    </section>
+
+    <!-- 4. What's Included -->
+    <section class="p-included-section">
+        <span class="p-section-label">Every Plan Includes</span>
+        <h2 class="p-section-title">What You Always Get</h2>
+        <p class="p-section-sub">Regardless of which plan you choose, these are guaranteed</p>
+        <div class="p-included-grid">
+            <div class="p-included-card">
+                <div class="p-included-icon"><i class="fas fa-video"></i></div>
+                <h3>Live Sessions</h3>
+                <p>Real-time 1-on-1 video calls with Dr. Syed via Zoom, tailored to your pace.</p>
+            </div>
+            <div class="p-included-card">
+                <div class="p-included-icon"><i class="fas fa-book-open"></i></div>
+                <h3>Study Materials</h3>
+                <p>Digital notes, formula sheets, and practice problems for every topic covered.</p>
+            </div>
+            <div class="p-included-card">
+                <div class="p-included-icon"><i class="fas fa-video" style="display:none"></i><i class="fas fa-play-circle"></i></div>
+                <h3>Session Recordings</h3>
+                <p>Every session is recorded so you can review key moments at any time.</p>
+            </div>
+            <div class="p-included-card">
+                <div class="p-included-icon"><i class="fas fa-comments"></i></div>
+                <h3>Direct Support</h3>
+                <p>Ask questions between sessions via email — Dr. Syed responds within 24 hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Mini Testimonials -->
+    <section class="p-testimonials">
+        <span class="p-section-label">Student Feedback</span>
+        <h2 class="p-section-title">Worth Every Penny</h2>
+        <p class="p-section-sub">Students who invested in their future and got real results</p>
+        <div class="p-testimonials-grid">
+            <!-- Jack Marks -->
+            <div class="p-testimonial-card">
+                <div class="p-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="p-testimonial-quote">"I was stuck at 650 for months and had almost given up on SAT Math. Dr. Syed's sessions completely changed how I think about problems. I walked out of the exam with a 760 — best investment I've made for my future."</p>
+                <div class="p-testimonial-author">
+                    <img src="images/WhatsApp Image 2026-03-17 at 21.05.29.jpeg" alt="Jack" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                    <div>
+                        <div class="p-testimonial-name">Jack</div>
+                        <div class="p-testimonial-plan">SAT Math · 650 → 760</div>
+                    </div>
+                </div>
+            </div>
+            <!-- M.Muzammil -->
+            <div class="p-testimonial-card">
+                <div class="p-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="p-testimonial-quote">"Already scoring 740, I thought I'd maxed out. Dr. Syed showed me exactly where I was losing points — advanced algebra and problem setup. After working with him, I jumped to 790. The precision of his teaching is incredible."</p>
+                <div class="p-testimonial-author">
+                    <img src="images/WhatsApp Image 2026-03-16 at 19.13.16.jpeg" alt="M. Muzammil" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                    <div>
+                        <div class="p-testimonial-name">M. Muzammil</div>
+                        <div class="p-testimonial-plan">SAT Math · 740 → 790</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Kartik -->
+            <div class="p-testimonial-card">
+                <div class="p-testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="p-testimonial-quote">"A perfect 800 on SAT Math — something I never thought possible. Dr. Syed doesn't just teach formulas, he teaches you to think like a mathematician. Worth every single penny and more."</p>
+                <div class="p-testimonial-author">
+                    <img src="images/WhatsApp Image 2026-03-24 at 22.30.38.jpeg" alt="Karthik" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+                    <div>
+                        <div class="p-testimonial-name">Karthik</div>
+                        <div class="p-testimonial-plan">SAT Math · 800 (Perfect Score)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="p-faq-section">
+        <span class="p-section-label">Got Questions?</span>
+        <h2 class="p-section-title">Frequently Asked Questions</h2>
+        <p class="p-section-sub">Everything you need to know before enrolling</p>
+        <div class="p-faq-list">
+            <div class="p-faq-item">
+                <div class="p-faq-question"><h3>Can I switch plans after starting?</h3><i class="fas fa-chevron-down"></i></div>
+                <div class="p-faq-answer"><p>Yes! You can upgrade to a higher plan at any time. The remaining balance from your current plan will be credited toward the new one.</p></div>
+            </div>
+            <div class="p-faq-item">
+                <div class="p-faq-question"><h3>What is included in a live session?</h3><i class="fas fa-chevron-down"></i></div>
+                <div class="p-faq-answer"><p>Each live session is a 2-hour one-on-one video call with Dr. Syed where you work through problems, learn strategies, and get personalized feedback on your progress.</p></div>
+            </div>
+            <div class="p-faq-item">
+                <div class="p-faq-question"><h3>Is there a money-back guarantee?</h3><i class="fas fa-chevron-down"></i></div>
+                <div class="p-faq-answer"><p>We offer a 7-day satisfaction guarantee. If you're not happy with the program after your first week, we'll provide a full refund — no questions asked.</p></div>
+            </div>
+            <div class="p-faq-item">
+                <div class="p-faq-question"><h3>How do I schedule my sessions?</h3><i class="fas fa-chevron-down"></i></div>
+                <div class="p-faq-answer"><p>After enrollment, you'll receive a scheduling link where you can book sessions at times that work for you. Flexible scheduling is available 7 days a week.</p></div>
+            </div>
+            <div class="p-faq-item">
+                <div class="p-faq-question"><h3>What does "Score Guarantee" mean?</h3><i class="fas fa-chevron-down"></i></div>
+                <div class="p-faq-answer"><p>With the Intensive Prep plan, if your SAT math score doesn't improve by at least 100 points, you'll receive additional sessions at no extra cost until you reach your goal.</p></div>
+            </div>
+            <div class="p-faq-item">
+                <div class="p-faq-question"><h3>Are sessions online or in-person?</h3><i class="fas fa-chevron-down"></i></div>
+                <div class="p-faq-answer"><p>All sessions are conducted online via Zoom. This gives students worldwide access to Dr. Syed's expertise from the comfort of their own home.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CTA -->
+    <section class="p-cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Journey?</h2>
+            <p>Join 500+ students who transformed their scores with Dr. Syed. Book a free consultation today.</p>
+            <div class="p-cta-buttons">
+                <a href="contact.html" class="p-cta-btn-white"><i class="fas fa-calendar-alt"></i> Book Free Consultation</a>
+                <a href="mailto:tutor@drsyedmath.com" class="p-cta-btn-ghost"><i class="fas fa-envelope"></i> Email Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dr. Syed</h3>
+                    <p>Expert math tutoring from a PhD in Mathematics — Algebra to Calculus.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Dr. Syed</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="courses.html">Algebra</a></li>
+                        <li><a href="courses.html">Geometry</a></li>
+                        <li><a href="courses.html">Pre Calculus</a></li>
+                        <li><a href="courses.html">Calculus AB &amp; BC</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> tutor@drsyedmath.com</li>
+                        <li><i class="fas fa-phone"></i> +92 311 830 8324</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dr. Syed. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923118308324" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.p-faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const answer = item.querySelector('.p-faq-answer');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.p-faq-item').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.p-faq-answer').style.maxHeight = null;
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

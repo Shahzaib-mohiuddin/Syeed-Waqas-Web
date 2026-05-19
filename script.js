@@ -1,414 +1,445 @@
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+// ========================================
+// PREMIUM SCROLL ANIMATIONS & INTERACTIONS
+// ========================================
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+    initHeroAnimations();
+    initScrollReveal();
+    initNavbarScroll();
+    initParallax();
+    initTiltCards();
+    initCounterAnimation();
+    initFAQ();
+    initSmoothScroll();
+    initMobileNav();
+    initMagneticButtons();
+    initCursorGlow();
+    initRipple();
+    initRetroCarousel();
+    initContactForms();
 });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+// ---- MOBILE NAVIGATION ----
+function initMobileNav() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    if (!hamburger || !navMenu) return;
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
-});
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+}
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+// ---- SMOOTH SCROLLING ----
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+}
+
+// ---- HERO ENTRANCE ANIMATIONS ----
+function initHeroAnimations() {
+    const heroElements = [
+        '.hero-tagline', '.hero-new-title', '.hero-new-content > p',
+        '.hero-new-buttons', '.hero-social-proof', '.hero-new-image'
+    ];
+    heroElements.forEach((sel, i) => {
+        const el = document.querySelector(sel);
+        if (el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 1s cubic-bezier(0.16, 1, 0.3, 1)';
+            setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, i * 150 + 200);
         }
     });
-});
+}
 
-// Floating Navigation scroll effect - REMOVED to keep transparent
-// window.addEventListener('scroll', () => {
-//     const floatingNav = document.querySelector('.floating-nav');
-//     if (window.scrollY > 100) {
-//         floatingNav.style.background = 'rgba(255, 255, 255, 0.98)';
-//         floatingNav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.15)';
-//     } else {
-//         floatingNav.style.background = 'rgba(255, 255, 255, 0.95)';
-//         floatingNav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-//     }
-// });
+// ---- SCROLL REVEAL SYSTEM ----
+function initScrollReveal() {
+    const sections = document.querySelectorAll(
+        '.section-header, .about, .about-content, .teaching-philosophy, .testimonials, .courses-section, .pricing, .contact, .contact-content, .faq, .faq-section, .results-section, .cta-section, .why-section, .sat-results, .success-stories, .comparison-section, .courses-section-v2'
+    );
+    sections.forEach(s => { if (!s.classList.contains('reveal')) s.classList.add('reveal'); });
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            observer.unobserve(entry.target);
-        }
+    const grids = document.querySelectorAll(
+        '.courses-grid-new, .courses-v2-grid, .pricing-grid, .results-grid, .testimonials-grid, .stats-bar, .features-grid, .philosophy-grid, .stories-grid, .expertise-highlights'
+    );
+    grids.forEach(grid => {
+        grid.classList.add('stagger-children');
+        Array.from(grid.children).forEach(child => child.classList.add('stagger-item'));
     });
-}, observerOptions);
 
-// FAQ Accordion functionality
-document.addEventListener('DOMContentLoaded', () => {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children, .img-reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+}
+
+// ---- NAVBAR SCROLL EFFECT ----
+function initNavbarScroll() {
+    const nav = document.querySelector('.floating-nav');
+    if (!nav) return;
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        requestAnimationFrame(() => {
+            const scrollY = window.scrollY;
+            if (scrollY > 60) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            if (scrollY > lastScroll && scrollY > 400) {
+                nav.style.transform = 'translateX(-50%) translateY(-100px)';
+            } else {
+                nav.style.transform = 'translateX(-50%) translateY(0)';
+            }
+            lastScroll = scrollY;
+        });
+    }, { passive: true });
+}
+
+// ---- PARALLAX EFFECT ----
+function initParallax() {
+    const heroImage = document.querySelector('.hero-new-image');
+    const heroContent = document.querySelector('.hero-new-content');
+    if (!heroImage && !heroContent) return;
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        if (scrollY > 800) return;
+        if (heroImage) heroImage.style.transform = 'translateY(' + (scrollY * 0.08) + 'px)';
+        if (heroContent) heroContent.style.transform = 'translateY(' + (scrollY * 0.03) + 'px)';
+    }, { passive: true });
+}
+
+// ---- FAQ ACCORDION ----
+function initFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
-    
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        
+        if (!question) return;
         question.addEventListener('click', () => {
-            // Close all other FAQ items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            
-            // Toggle current FAQ item
+            faqItems.forEach(other => { if (other !== item) other.classList.remove('active'); });
             item.classList.toggle('active');
         });
     });
-});
+}
 
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.feature-card, .course-card, .testimonial-card, .pricing-highlight, .faq-item');
-    animateElements.forEach(el => observer.observe(el));
-});
+// ---- 3D TILT CARD EFFECT ----
+function initTiltCards() {
+    const cards = document.querySelectorAll(
+        '.course-card-new, .pricing-card, .result-card, .testimonial-card'
+    );
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / 25;
+            const rotateY = (centerX - x) / 25;
+            card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-5px)';
+            card.style.transition = 'transform 0.1s ease';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+        });
+    });
+}
 
-// Counter animation for stats
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = target + (element.textContent.includes('+') ? '+' : '') + (element.textContent.includes('%') ? '%' : '');
-            clearInterval(timer);
+// ---- COUNTER ANIMATION ----
+function initCounterAnimation() {
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counters = entry.target.querySelectorAll('.stat-number');
+                counters.forEach(counter => animateValue(counter));
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stats-bar, .hero-stats').forEach(el => {
+        if (el) counterObserver.observe(el);
+    });
+}
+
+function animateValue(el) {
+    const text = el.textContent.trim();
+    const hasPlus = text.includes('+');
+    const hasPercent = text.includes('%');
+    const number = parseInt(text.replace(/[^\d]/g, ''));
+    if (isNaN(number)) return;
+
+    const duration = 2000;
+    const startTime = performance.now();
+    el.textContent = '0' + (hasPlus ? '+' : '') + (hasPercent ? '%' : '');
+
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(eased * number);
+        el.textContent = current + (hasPlus ? '+' : '') + (hasPercent ? '%' : '');
+        if (progress < 1) {
+            requestAnimationFrame(update);
         } else {
-            element.textContent = Math.floor(start) + (element.textContent.includes('+') ? '+' : '') + (element.textContent.includes('%') ? '%' : '');
+            el.textContent = number + (hasPlus ? '+' : '') + (hasPercent ? '%' : '');
         }
-    }, 16);
-}
-
-// Initialize counter animation when stats are visible
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                const text = stat.textContent;
-                const number = parseInt(text.replace(/\D/g, ''));
-                animateCounter(stat, number);
-            });
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    statsObserver.observe(heroStats);
-}
-
-// Contact form handling
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
-        
-        // Show loading state
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        // Simulate form submission (replace with actual form handling)
-        setTimeout(() => {
-            // Show success message
-            showNotification('Thank you for your inquiry! We will contact you within 24 hours.', 'success');
-            
-            // Reset form
-            this.reset();
-            
-            // Reset button
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
-    });
-}
-
-// Notification system
-function showNotification(message, type = 'info') {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
-            <span>${message}</span>
-            <button class="notification-close">&times;</button>
-        </div>
-    `;
-    
-    // Add notification styles if not already added
-    if (!document.querySelector('#notification-styles')) {
-        const notificationStyles = document.createElement('style');
-        notificationStyles.id = 'notification-styles';
-        notificationStyles.textContent = `
-            .notification {
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background: white;
-                border-radius: 8px;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-                z-index: 10000;
-                transform: translateX(400px);
-                transition: transform 0.3s ease;
-                max-width: 400px;
-            }
-            
-            .notification.show {
-                transform: translateX(0);
-            }
-            
-            .notification-content {
-                display: flex;
-                align-items: center;
-                padding: 16px;
-                gap: 12px;
-            }
-            
-            .notification-success {
-                border-left: 4px solid #28a745;
-            }
-            
-            .notification-success i {
-                color: #28a745;
-            }
-            
-            .notification-error {
-                border-left: 4px solid #dc3545;
-            }
-            
-            .notification-error i {
-                color: #dc3545;
-            }
-            
-            .notification-info {
-                border-left: 4px solid #667eea;
-            }
-            
-            .notification-info i {
-                color: #667eea;
-            }
-            
-            .notification-close {
-                background: none;
-                border: none;
-                font-size: 20px;
-                cursor: pointer;
-                color: #666;
-                margin-left: auto;
-            }
-            
-            @media (max-width: 480px) {
-                .notification {
-                    right: 10px;
-                    left: 10px;
-                    max-width: none;
-                }
-            }
-        `;
-        document.head.appendChild(notificationStyles);
     }
-    
-    // Add to page
-    document.body.appendChild(notification);
-    
-    // Show notification
-    setTimeout(() => notification.classList.add('show'), 100);
-    
-    // Close button functionality
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-        notification.classList.remove('show');
-        setTimeout(() => notification.remove(), 300);
-    });
-    
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.classList.remove('show');
-            setTimeout(() => notification.remove(), 300);
-        }
-    }, 5000);
+    requestAnimationFrame(update);
 }
 
-// Button click effects
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        // Create ripple effect
+// ---- MAGNETIC BUTTON HOVER ----
+function initMagneticButtons() {
+    document.querySelectorAll('.btn-primary, .nav-contact-btn').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = 'translate(' + (x * 0.15) + 'px, ' + (y * 0.15) + 'px)';
+            btn.style.transition = 'transform 0.1s ease';
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0, 0)';
+            btn.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        });
+    });
+}
+
+// ---- CURSOR GLOW ----
+function initCursorGlow() {
+    const glow = document.createElement('div');
+    glow.style.cssText = 'position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(52,76,198,0.06) 0%,transparent 70%);pointer-events:none;z-index:0;transform:translate(-50%,-50%);transition:opacity 0.3s ease;opacity:0;';
+    document.body.appendChild(glow);
+    document.addEventListener('mousemove', (e) => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+        glow.style.opacity = '1';
+    });
+    document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
+}
+
+// ---- BUTTON RIPPLE EFFECT ----
+function initRipple() {
+    const style = document.createElement('style');
+    style.textContent = '@keyframes rippleEffect { to { transform: scale(4); opacity: 0; } }';
+    document.head.appendChild(style);
+
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.btn');
+        if (!btn) return;
         const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
+        const rect = btn.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
         const x = e.clientX - rect.left - size / 2;
         const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple');
-        
-        // Add ripple styles if not already added
-        if (!document.querySelector('#ripple-styles')) {
-            const rippleStyles = document.createElement('style');
-            rippleStyles.id = 'ripple-styles';
-            rippleStyles.textContent = `
-                .btn {
-                    position: relative;
-                    overflow: hidden;
-                }
-                
-                .ripple {
-                    position: absolute;
-                    border-radius: 50%;
-                    background: rgba(255, 255, 255, 0.6);
-                    transform: scale(0);
-                    animation: ripple-animation 0.6s ease-out;
-                    pointer-events: none;
-                }
-                
-                @keyframes ripple-animation {
-                    to {
-                        transform: scale(4);
-                        opacity: 0;
-                    }
-                }
-            `;
-            document.head.appendChild(rippleStyles);
-        }
-        
-        this.appendChild(ripple);
-        
+        ripple.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;left:' + x + 'px;top:' + y + 'px;border-radius:50%;background:rgba(255,255,255,0.5);transform:scale(0);animation:rippleEffect 0.6s ease-out;pointer-events:none;';
+        btn.style.position = 'relative';
+        btn.style.overflow = 'hidden';
+        btn.appendChild(ripple);
         setTimeout(() => ripple.remove(), 600);
     });
-});
+}
 
-// Course enrollment buttons
-document.querySelectorAll('.course-card .btn').forEach(button => {
-    button.addEventListener('click', function(e) {
+// ---- NOTIFICATION SYSTEM ----
+function showNotification(message, type) {
+    type = type || 'info';
+    const notification = document.createElement('div');
+    notification.className = 'notification notification-' + type;
+    
+    const iconMap = { 
+        success: 'fa-check-circle', 
+        error: 'fa-exclamation-circle', 
+        info: 'fa-info-circle' 
+    };
+    
+    const colorMap = {
+        success: '#16a34a',
+        error: '#ef4444',
+        info: '#344CC6'
+    };
+    
+    const color = colorMap[type] || colorMap.info;
+    const icon = iconMap[type] || iconMap.info;
+    
+    notification.innerHTML = `
+        <div style="display:flex; align-items:center; padding:16px 20px; gap:14px; font-family:'Plus Jakarta Sans', sans-serif;">
+            <i class="fas ${icon}" style="color: ${color}; font-size: 1.25rem; flex-shrink: 0;"></i>
+            <span style="color: #1e293b; font-size: 0.875rem; font-weight: 500; line-height: 1.5; padding-right: 10px;">${message}</span>
+            <button onclick="this.closest('.notification').style.transform='translateX(400px)'; setTimeout(() => this.closest('.notification').remove(), 400)" 
+                    style="background:none; border:none; font-size:22px; cursor:pointer; color:#94a3b8; margin-left:auto; display:flex; align-items:center; justify-content:center; padding: 0; transition:color 0.2s;"
+                    onmouseover="this.style.color='#475569'" 
+                    onmouseout="this.style.color='#94a3b8'">&times;</button>
+        </div>
+    `;
+    
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        z-index: 10000;
+        transform: translateX(400px);
+        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        max-width: 400px;
+        min-width: 280px;
+        border-left: 5px solid ${color};
+        box-sizing: border-box;
+    `;
+    
+    document.body.appendChild(notification);
+    setTimeout(() => { notification.style.transform = 'translateX(0)'; }, 50);
+    
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.style.transform = 'translateX(400px)';
+            setTimeout(() => notification.remove(), 400);
+        }
+    }, 6000);
+}
+
+// ---- CONTACT FORM HANDLER ----
+function initContactForms() {
+    const homeForm = document.getElementById('home-contact-form');
+    const pageForm = document.getElementById('page-contact-form');
+
+    if (homeForm) {
+        setupFormSubmit(homeForm, 'Home Screen - Get in Touch');
+    }
+    if (pageForm) {
+        setupFormSubmit(pageForm, 'Contact Page - Free Consultation');
+    }
+}
+
+function setupFormSubmit(form, sourceName) {
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
-        const courseCard = this.closest('.course-card');
-        const courseName = courseCard.querySelector('h3').textContent;
-        const coursePrice = courseCard.querySelector('.price').textContent;
         
-        showNotification(`You've selected the ${courseName} course (${coursePrice}). Please fill out the contact form to get started!`, 'info');
+        const submitBtn = this.querySelector('button[type="submit"]');
+        if (!submitBtn) return;
         
-        // Scroll to contact form
-        document.querySelector('#contact').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+        const originalContent = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        
+        // Show premium loading spinner and text
+        submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sending...';
+        
+        // Gather form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+        data.form_source = sourceName;
+        
+        // Send data to PHP backend
+        fetch('send_email.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => { throw err; });
+            }
+            return response.json();
+        })
+        .then(res => {
+            if (res.success) {
+                showNotification(res.message || 'Thank you! Your message has been sent successfully.', 'success');
+                form.reset();
+            } else {
+                showNotification(res.message || 'An error occurred while sending your message. Please try again.', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Contact Form Error:', error);
+            const errorMsg = error.message || 'Failed to send message. Please check your internet connection or email us directly.';
+            showNotification(errorMsg, 'error');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalContent;
         });
     });
-});
+}
 
-// Demo lesson button
-document.querySelectorAll('.hero-buttons .btn-outline').forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        showNotification('Demo lesson request received! We will contact you shortly to schedule your free session.', 'success');
+// ---- RETRO TESTIMONIAL CAROUSEL ----
+function initRetroCarousel() {
+    const carousel = document.getElementById('retroCarousel');
+    const leftBtn = document.getElementById('retroLeft');
+    const rightBtn = document.getElementById('retroRight');
+    if (!carousel || !leftBtn || !rightBtn) return;
+
+    const firstCard = carousel.querySelector('.retro-card');
+    const scrollAmount = firstCard ? firstCard.offsetWidth + 20 : 300;
+
+    function updateButtons() {
+        const { scrollLeft, scrollWidth, clientWidth } = carousel;
+        leftBtn.disabled = scrollLeft <= 5;
+        rightBtn.disabled = scrollLeft >= scrollWidth - clientWidth - 5;
+    }
+
+    leftBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     });
-});
 
-// Free trial button
-document.querySelectorAll('.hero-buttons .btn-primary').forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        showNotification('Welcome! Start your 7-day free trial today. No credit card required.', 'success');
-        
-        // Scroll to contact form
-        document.querySelector('#contact').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+    rightBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
-});
 
-// Lazy loading for images (if any real images are added later)
-function lazyLoadImages() {
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries) => {
+    carousel.addEventListener('scroll', updateButtons);
+    updateButtons();
+
+    // Entrance animation: stagger cards in
+    const cards = carousel.querySelectorAll('.retro-card');
+    cards.forEach((card, i) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                imageObserver.unobserve(img);
+                cards.forEach((card, i) => {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 150 * i);
+                });
+                observer.disconnect();
             }
         });
-    });
-    
-    images.forEach(img => imageObserver.observe(img));
+    }, { threshold: 0.2 });
+
+    observer.observe(carousel);
 }
 
-// Initialize lazy loading
-lazyLoadImages();
-
-// Performance optimization - Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Debounced scroll handler
-const debouncedScrollHandler = debounce(() => {
-    // Add any scroll-based animations here
-}, 100);
-
-window.addEventListener('scroll', debouncedScrollHandler);
-
-// Page load animation
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-    
-    // Add page load styles if not already added
-    if (!document.querySelector('#page-load-styles')) {
-        const pageLoadStyles = document.createElement('style');
-        pageLoadStyles.id = 'page-load-styles';
-        pageLoadStyles.textContent = `
-            body {
-                opacity: 0;
-                transition: opacity 0.5s ease;
-            }
-            
-            body.loaded {
-                opacity: 1;
-            }
-        `;
-        document.head.appendChild(pageLoadStyles);
-    }
-});
-
-// Console welcome message
-console.log('%c🎓 Dr. Syeed Waqas SAT Prep Website', 'color: #667eea; font-size: 20px; font-weight: bold;');
-console.log('%cMaster the SAT with expert math guidance!', 'color: #764ba2; font-size: 14px;');
+// ---- CONSOLE BRANDING ----
+console.log('%c Dr. Syed Waqas — Math Tutoring', 'color: #344CC6; font-size: 20px; font-weight: bold;');
+console.log('%cMaster math from Algebra to Calculus!', 'color: #7c3aed; font-size: 14px;');

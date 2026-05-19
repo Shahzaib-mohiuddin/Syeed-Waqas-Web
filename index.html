@@ -4,50 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Syeed SAT Prep - Expert Math & Calculus Tutoring</title>
+    <title>Dr. Syed SAT Prep - Expert Math & Calculus Tutoring</title>
     <meta name="description"
-        content="Improve your SAT® score with expert tutoring from Dr. Syeed, PhD in Mathematics. Get personalized online SAT prep, comprehensive video lessons, and practice questions.">
+        content="Improve your SAT® score with expert tutoring from Dr. Syed, PhD in Mathematics. Get personalized online SAT prep, comprehensive video lessons, and practice questions.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="courses.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            prefix: 'tw-',
+        }
+    </script>
 </head>
 
 <body>
-    <!-- Floating Navigation -->
-    <nav class="floating-nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <h2>Dr. Syeed</h2>
-                <span>SAT Prep</span>
-            </a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="courses.html" class="nav-link">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a href="results.html" class="nav-link">Results</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#pricing" class="nav-link">Pricing</a>
-                </li>
-            </ul>
-            <div class="nav-buttons">
-                <a href="contact.html" class="nav-contact-btn">Contact</a>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <h2>Dr. Syed</h2>
+                    <span>Math Tutoring</span>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="courses.html" class="nav-link">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="results.html" class="nav-link">Results</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pricing.html" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item mobile-only">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="contact.html" class="nav-contact-btn">Contact</a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero-new">
@@ -67,15 +80,15 @@
                     (PhD) to secure your dream college admission.
                 </p>
                 <div class="hero-new-buttons">
-                    <button class="btn btn-hero-primary">Book a Free Assessment & Consultation</button>
-                    <button class="btn btn-hero-outline">Watch Me Teach</button>
+                    <a href="#contact" class="btn btn-hero-primary" style="display:inline-flex; align-items:center; justify-content:center; text-decoration:none;">Book a Free Assessment & Consultation</a>
+                    <a href="https://www.youtube.com/watch?v=2y7EQ9DDPGo" target="_blank" class="btn btn-hero-outline" style="display:inline-flex; align-items:center; justify-content:center; text-decoration:none;">Watch Me Teach</a>
                 </div>
                 <div class="hero-students">
                     <div class="student-avatars">
-                        <div class="avatar" style="background: #FF6B6B;"></div>
-                        <div class="avatar" style="background: #4ECDC4;"></div>
-                        <div class="avatar" style="background: #FFE66D;"></div>
-                        <div class="avatar" style="background: #95E1D3;"></div>
+                        <img class="avatar" src="images/quality_restoration_20260325005943614.JPEG" alt="Student">
+                        <img class="avatar" src="images/quality_restoration_20260325010007526.JPEG" alt="Student">
+                        <img class="avatar" src="images/WhatsApp Image 2026-03-16 at 19.13.16.jpeg" alt="Student">
+                        <img class="avatar" src="images/WhatsApp Image 2026-03-17 at 21.05.29.jpeg" alt="Student">
                     </div>
                     <div class="student-count">
                         <span class="count-number">200+</span>
@@ -88,7 +101,7 @@
                     <div class="video-badge">
                         <i class="fas fa-video"></i>
                     </div>
-                    <img src="images/drsyeedpng.png" alt="Dr. Syeed - SAT Math Tutor" class="tutor-image">
+                    <img src="images/drsyedpng.png" alt="Dr. Syed - SAT Math Tutor" class="tutor-image">
                     <div class="floating-badge badge-top">
                         <span class="badge-icon">🎓</span>
                         <span>PhD-Level Expertise</span>
@@ -109,7 +122,7 @@
     <section id="features" class="features">
         <div class="container">
             <div class="features-header">
-                <span class="features-label"><i class="fas fa-star"></i> Why Dr. Syeed</span>
+                <span class="features-label"><i class="fas fa-star"></i> Why Dr. Syed</span>
                 <h2>Your Shortest Path to a <span class="text-highlight-green">1500+</span> Score</h2>
                 <p>Expert guidance tailored to your learning style and goals</p>
             </div>
@@ -206,158 +219,168 @@
     </section>
 
     <!-- SAT Results Section -->
-    <section class="results-section">
-      <div class="results-container">
-        <div class="results-header">
-          <span class="results-badge">Proven Results</span>
-          <h2 class="results-title">Real Students. <span class="gold">Real Results.</span></h2>
-          <p class="results-subtitle">Our students consistently achieve remarkable score improvements with an average increase of <strong>+310 points</strong>.</p>
+    <section class="tw-py-24 tw-px-6" style="background: transparent;">
+      <div class="tw-max-w-6xl tw-mx-auto">
+
+        <!-- Header -->
+        <div class="tw-text-center tw-mb-20">
+          <p class="tw-text-xs tw-font-semibold tw-tracking-[0.3em] tw-uppercase tw-text-neutral-400 tw-mb-4">Proven Results</p>
+          <h2 class="tw-text-4xl md:tw-text-5xl tw-font-light tw-text-neutral-900 tw-tracking-tight tw-leading-tight">
+            Real Students. <span class="tw-font-normal tw-italic tw-text-green-600">Real Results.</span>
+          </h2>
+          <div class="tw-w-12 tw-h-px tw-bg-neutral-300 tw-mx-auto tw-mt-6 tw-mb-6"></div>
+          <p class="tw-text-base tw-text-neutral-500 tw-font-light tw-max-w-lg tw-mx-auto tw-leading-relaxed">
+            Our students consistently achieve remarkable score improvements with an average increase of <span class="tw-font-medium tw-text-neutral-800">+310 points</span>.
+          </p>
         </div>
 
-        <div class="stats-bar">
-          <div class="stat-item">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">Students Helped</div>
+        <!-- Stats Row -->
+        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-px tw-bg-neutral-200 tw-border tw-border-neutral-200 tw-mb-20">
+          <div class="tw-bg-white tw-py-10 tw-px-6 tw-text-center">
+            <div class="tw-text-3xl tw-font-extralight tw-text-neutral-900 tw-tracking-tight tw-mb-1">500+</div>
+            <div class="tw-text-[0.65rem] tw-font-medium tw-tracking-[0.2em] tw-uppercase tw-text-neutral-400">Students Helped</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number gold">+310</div>
-            <div class="stat-label">Avg. Point Gain</div>
+          <div class="tw-bg-white tw-py-10 tw-px-6 tw-text-center">
+            <div class="tw-text-3xl tw-font-extralight tw-text-green-600 tw-tracking-tight tw-mb-1">+310</div>
+            <div class="tw-text-[0.65rem] tw-font-medium tw-tracking-[0.2em] tw-uppercase tw-text-neutral-400">Avg. Point Gain</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">98%</div>
-            <div class="stat-label">Score Improvement</div>
+          <div class="tw-bg-white tw-py-10 tw-px-6 tw-text-center">
+            <div class="tw-text-3xl tw-font-extralight tw-text-neutral-900 tw-tracking-tight tw-mb-1">98%</div>
+            <div class="tw-text-[0.65rem] tw-font-medium tw-tracking-[0.2em] tw-uppercase tw-text-neutral-400">Score Improvement</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number gold">1500+</div>
-            <div class="stat-label">Avg. Final Score</div>
+          <div class="tw-bg-white tw-py-10 tw-px-6 tw-text-center">
+            <div class="tw-text-3xl tw-font-extralight tw-text-green-600 tw-tracking-tight tw-mb-1">1500+</div>
+            <div class="tw-text-[0.65rem] tw-font-medium tw-tracking-[0.2em] tw-uppercase tw-text-neutral-400">Avg. Final Score</div>
           </div>
         </div>
 
-        <div class="results-grid">
+        <!-- Results Grid -->
+        <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-6">
           <!-- Card 1 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-27.png" alt="Sarah's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">Sarah Johnson</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1120</div>
+          <div class="tw-group tw-bg-neutral-50 tw-border tw-border-neutral-200 tw-rounded-2xl tw-overflow-hidden tw-transition-all tw-duration-500 hover:tw-shadow-xl hover:tw-border-neutral-300 hover:-tw-translate-y-1">
+            <img src="images/results/Untitled design-27.png" alt="Dhruv's SAT Score" class="tw-w-full tw-h-48 tw-object-cover">
+            <div class="tw-p-6">
+              <h3 class="tw-text-lg tw-font-semibold tw-text-neutral-900 tw-mb-4">Dhruv</h3>
+              <div class="tw-flex tw-items-center tw-justify-center tw-gap-4 tw-mb-4">
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">Before</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-neutral-400 tw-tracking-tight">1260</div>
                 </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1300</div>
+                <div class="tw-text-neutral-300 tw-text-lg">→</div>
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">After</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-green-600 tw-tracking-tight">1300</div>
                 </div>
               </div>
-              <span class="improvement-badge">↑ +180 points</span>
+              <span class="tw-inline-block tw-bg-green-50 tw-text-green-600 tw-px-3 tw-py-1 tw-rounded-full tw-text-xs tw-font-semibold">↑ +40 points</span>
             </div>
           </div>
 
           <!-- Card 2 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-26.png" alt="Michael's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">Michael Chen</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1080</div>
+          <div class="tw-group tw-bg-neutral-50 tw-border tw-border-neutral-200 tw-rounded-2xl tw-overflow-hidden tw-transition-all tw-duration-500 hover:tw-shadow-xl hover:tw-border-neutral-300 hover:-tw-translate-y-1">
+            <img src="images/results/Untitled design-26.png" alt="Michael's SAT Score" class="tw-w-full tw-h-48 tw-object-cover">
+            <div class="tw-p-6">
+              <h3 class="tw-text-lg tw-font-semibold tw-text-neutral-900 tw-mb-4">Michael Chen</h3>
+              <div class="tw-flex tw-items-center tw-justify-center tw-gap-4 tw-mb-4">
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">Before</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-neutral-400 tw-tracking-tight">1080</div>
                 </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1290</div>
+                <div class="tw-text-neutral-300 tw-text-lg">→</div>
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">After</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-green-600 tw-tracking-tight">1290</div>
                 </div>
               </div>
-              <span class="improvement-badge">↑ +210 points</span>
+              <span class="tw-inline-block tw-bg-green-50 tw-text-green-600 tw-px-3 tw-py-1 tw-rounded-full tw-text-xs tw-font-semibold">↑ +210 points</span>
             </div>
           </div>
 
           <!-- Card 3 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-23.png" alt="Emily's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">Emily Rodriguez</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1150</div>
+          <div class="tw-group tw-bg-neutral-50 tw-border tw-border-neutral-200 tw-rounded-2xl tw-overflow-hidden tw-transition-all tw-duration-500 hover:tw-shadow-xl hover:tw-border-neutral-300 hover:-tw-translate-y-1">
+            <img src="images/results/Untitled design-23.png" alt="Emily's SAT Score" class="tw-w-full tw-h-48 tw-object-cover">
+            <div class="tw-p-6">
+              <h3 class="tw-text-lg tw-font-semibold tw-text-neutral-900 tw-mb-4">Emily Rodriguez</h3>
+              <div class="tw-flex tw-items-center tw-justify-center tw-gap-4 tw-mb-4">
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">Before</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-neutral-400 tw-tracking-tight">1150</div>
                 </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1390</div>
+                <div class="tw-text-neutral-300 tw-text-lg">→</div>
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">After</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-green-600 tw-tracking-tight">1390</div>
                 </div>
               </div>
-              <span class="improvement-badge">↑ +240 points</span>
+              <span class="tw-inline-block tw-bg-green-50 tw-text-green-600 tw-px-3 tw-py-1 tw-rounded-full tw-text-xs tw-font-semibold">↑ +240 points</span>
             </div>
           </div>
 
           <!-- Card 4 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-24.png" alt="David's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">David Lee</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1200</div>
+          <div class="tw-group tw-bg-neutral-50 tw-border tw-border-neutral-200 tw-rounded-2xl tw-overflow-hidden tw-transition-all tw-duration-500 hover:tw-shadow-xl hover:tw-border-neutral-300 hover:-tw-translate-y-1">
+            <img src="images/results/Untitled design-24.png" alt="Aditi's SAT Score" class="tw-w-full tw-h-48 tw-object-cover">
+            <div class="tw-p-6">
+              <h3 class="tw-text-lg tw-font-semibold tw-text-neutral-900 tw-mb-4">Aditi</h3>
+              <div class="tw-flex tw-items-center tw-justify-center tw-gap-4 tw-mb-4">
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">Before</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-neutral-400 tw-tracking-tight">1300</div>
                 </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1370</div>
+                <div class="tw-text-neutral-300 tw-text-lg">→</div>
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">After</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-green-600 tw-tracking-tight">1370</div>
                 </div>
               </div>
-              <span class="improvement-badge">↑ +170 points</span>
+              <span class="tw-inline-block tw-bg-green-50 tw-text-green-600 tw-px-3 tw-py-1 tw-rounded-full tw-text-xs tw-font-semibold">↑ +70 points</span>
             </div>
           </div>
 
           <!-- Card 5 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-22.png" alt="Jessica's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">Jessica Martinez</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1050</div>
+          <div class="tw-group tw-bg-neutral-50 tw-border tw-border-neutral-200 tw-rounded-2xl tw-overflow-hidden tw-transition-all tw-duration-500 hover:tw-shadow-xl hover:tw-border-neutral-300 hover:-tw-translate-y-1">
+            <img src="images/results/Untitled design-22.png" alt="Michael Tran's SAT Score" class="tw-w-full tw-h-48 tw-object-cover">
+            <div class="tw-p-6">
+              <h3 class="tw-text-lg tw-font-semibold tw-text-neutral-900 tw-mb-4">Michael Tran</h3>
+              <div class="tw-flex tw-items-center tw-justify-center tw-gap-4 tw-mb-4">
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">Before</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-neutral-400 tw-tracking-tight">1370</div>
                 </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1420</div>
+                <div class="tw-text-neutral-300 tw-text-lg">→</div>
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">After</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-green-600 tw-tracking-tight">1420</div>
                 </div>
               </div>
-              <span class="improvement-badge">↑ +370 points</span>
+              <span class="tw-inline-block tw-bg-green-50 tw-text-green-600 tw-px-3 tw-py-1 tw-rounded-full tw-text-xs tw-font-semibold">↑ +50 points</span>
             </div>
           </div>
 
           <!-- Card 6 -->
-          <div class="result-card">
-            <img src="images/results/Untitled design-25.png" alt="Alex's SAT Score">
-            <div class="result-card-content">
-              <h3 class="student-name">Alex Thompson</h3>
-              <div class="scores-row">
-                <div class="score-box">
-                  <div class="score-label">Before</div>
-                  <div class="score-value score-before">1180</div>
+          <div class="tw-group tw-bg-neutral-50 tw-border tw-border-neutral-200 tw-rounded-2xl tw-overflow-hidden tw-transition-all tw-duration-500 hover:tw-shadow-xl hover:tw-border-neutral-300 hover:-tw-translate-y-1">
+            <img src="images/results/Untitled design-25.png" alt="Alex's SAT Score" class="tw-w-full tw-h-48 tw-object-cover">
+            <div class="tw-p-6">
+              <h3 class="tw-text-lg tw-font-semibold tw-text-neutral-900 tw-mb-4">Alex Thompson</h3>
+              <div class="tw-flex tw-items-center tw-justify-center tw-gap-4 tw-mb-4">
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">Before</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-neutral-400 tw-tracking-tight">1180</div>
                 </div>
-                <div class="arrow-circle">→</div>
-                <div class="score-box">
-                  <div class="score-label">After</div>
-                  <div class="score-value score-after">1450</div>
+                <div class="tw-text-neutral-300 tw-text-lg">→</div>
+                <div class="tw-text-center">
+                  <div class="tw-text-[0.6rem] tw-font-semibold tw-uppercase tw-tracking-[0.15em] tw-text-neutral-400 tw-mb-1">After</div>
+                  <div class="tw-text-2xl tw-font-light tw-text-green-600 tw-tracking-tight">1450</div>
                 </div>
               </div>
-              <span class="improvement-badge">↑ +270 points</span>
+              <span class="tw-inline-block tw-bg-green-50 tw-text-green-600 tw-px-3 tw-py-1 tw-rounded-full tw-text-xs tw-font-semibold">↑ +270 points</span>
             </div>
           </div>
         </div>
 
-        <div class="results-cta">
-          <p>Ready to achieve your target score?</p>
-          <button class="cta-button">Start Your SAT Journey →</button>
+        <!-- CTA -->
+        <div class="tw-text-center tw-mt-16">
+          <p class="tw-text-sm tw-text-neutral-400 tw-mb-4">Ready to achieve your target score?</p>
+          <a href="contact.html" class="tw-inline-block tw-px-8 tw-py-3 tw-bg-neutral-900 tw-text-white tw-text-sm tw-font-medium tw-rounded-lg tw-tracking-wide hover:tw-bg-neutral-800 tw-transition-colors tw-duration-300">Start Your SAT Journey →</a>
         </div>
       </div>
     </section>
@@ -377,212 +400,189 @@
                     <button class="btn btn-primary">Learn More About Dr. Syed</button>
                 </div>
                 <div class="about-image">
-                    <div class="image-placeholder professor">
-                        <i class="fas fa-user-tie"></i>
-                        <p>Dr. Syeed</p>
-                        <span>Mathematics PhD & SAT Expert</span>
+                    <div class="video-container">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/2y7EQ9DDPGo?si=Kn8Xi3P__reLovs9"
+                            title="Dr. Syed - Mathematics PhD & SAT Expert"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Courses Section -->
-    <section id="courses" class="courses">
+    <!-- Courses Section V2 -->
+    <section id="courses" class="courses-section-v2">
         <div class="container">
-            <div class="section-header">
-                <h2>SAT Prep Courses</h2>
-                <p>Choose the perfect program for your goals and schedule</p>
+            <div class="courses-v2-header">
+                <span class="courses-v2-badge">What We Teach</span>
+                <h2>Our Courses</h2>
+                <p>From foundational algebra to advanced calculus — a clear path to mathematical mastery</p>
+                <div class="courses-v2-path">
+                    <span class="path-dot"></span>
+                    <span class="path-line"></span>
+                    <span class="path-dot"></span>
+                    <span class="path-line"></span>
+                    <span class="path-dot"></span>
+                </div>
             </div>
-            <div class="courses-grid">
-                <div class="course-card">
-                    <div class="course-header">
-                        <h3>Basic Prep</h3>
-                        <div class="course-price">
-                            <span class="price">$299</span>
-                            <span class="duration">4 weeks</span>
-                        </div>
+            <div class="courses-grid-new">
+                <!-- Algebra Course -->
+                <div class="course-card-new">
+                    <div class="course-thumbnail">
+                        <img src="images/file_0000000080ac71f48134d0e28abdb88b.png" alt="Algebra Course">
+                        <div class="course-level-badge beginner">Beginner</div>
                     </div>
-                    <ul class="course-features">
-                        <li><i class="fas fa-check"></i> 8 live sessions (2 hours each)</li>
-                        <li><i class="fas fa-check"></i> Access to practice materials</li>
-                        <li><i class="fas fa-check"></i> Email support</li>
-                        <li><i class="fas fa-check"></i> Progress tracking</li>
-                    </ul>
-                    <button class="btn btn-outline">Enroll Now</button>
-                </div>
-                <div class="course-card featured">
-                    <div class="course-badge">Most Popular</div>
-                    <div class="course-header">
-                        <h3>Comprehensive Prep</h3>
-                        <div class="course-price">
-                            <span class="price">$599</span>
-                            <span class="duration">8 weeks</span>
+                    <div class="course-card-content">
+                        <h3>Algebra</h3>
+                        <p>Build a strong foundation in algebraic concepts including equations, inequalities, and functions essential for advanced math.</p>
+                        <div class="course-info">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 12 weeks</span>
+                            <span class="course-lessons"><i class="fas fa-book"></i> 24 lessons</span>
                         </div>
+                        <a href="courses.html" class="btn btn-primary btn-full">Learn More</a>
                     </div>
-                    <ul class="course-features">
-                        <li><i class="fas fa-check"></i> 16 live sessions (2 hours each)</li>
-                        <li><i class="fas fa-check"></i> Full practice tests with review</li>
-                        <li><i class="fas fa-check"></i> Priority email support</li>
-                        <li><i class="fas fa-check"></i> 1-on-1 strategy session</li>
-                        <li><i class="fas fa-check"></i> Custom study plan</li>
-                    </ul>
-                    <button class="btn btn-primary">Enroll Now</button>
                 </div>
-                <div class="course-card">
-                    <div class="course-header">
-                        <h3>Intensive Prep</h3>
-                        <div class="course-price">
-                            <span class="price">$999</span>
-                            <span class="duration">12 weeks</span>
+
+                <!-- Geometry Course -->
+                <div class="course-card-new">
+                    <div class="course-thumbnail">
+                        <img src="images/file_00000000f27871f4a9052b7307d0645b.png" alt="Geometry Course">
+                        <div class="course-level-badge beginner">Beginner</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h3>Geometry</h3>
+                        <p>Explore shapes, angles, proofs, and spatial reasoning. Master congruence, similarity, circles, and coordinate geometry.</p>
+                        <div class="course-info">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 12 weeks</span>
+                            <span class="course-lessons"><i class="fas fa-book"></i> 24 lessons</span>
                         </div>
+                        <a href="courses.html" class="btn btn-primary btn-full">Learn More</a>
                     </div>
-                    <ul class="course-features">
-                        <li><i class="fas fa-check"></i> 24 live sessions (2 hours each)</li>
-                        <li><i class="fas fa-check"></i> Unlimited practice tests</li>
-                        <li><i class="fas fa-check"></i> 24/7 support</li>
-                        <li><i class="fas fa-check"></i> Weekly 1-on-1 sessions</li>
-                        <li><i class="fas fa-check"></i> Score guarantee</li>
-                    </ul>
-                    <button class="btn btn-outline">Enroll Now</button>
                 </div>
+
+                <!-- Pre Calculus Course -->
+                <div class="course-card-new">
+                    <div class="course-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=400&h=250&fit=crop" alt="Pre Calculus Course">
+                        <div class="course-level-badge intermediate">Intermediate</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h3>Pre Calculus</h3>
+                        <p>Bridge algebra and calculus. Master trigonometry, advanced functions, sequences, series, and introduction to limits.</p>
+                        <div class="course-info">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 14 weeks</span>
+                            <span class="course-lessons"><i class="fas fa-book"></i> 28 lessons</span>
+                        </div>
+                        <a href="courses.html" class="btn btn-primary btn-full">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Calculus AB & BC Course -->
+                <div class="course-card-new">
+                    <div class="course-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?w=400&h=250&fit=crop" alt="Calculus Course">
+                        <div class="course-level-badge advanced">Advanced</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h3>Calculus AB & BC</h3>
+                        <p>Complete calculus curriculum covering limits, derivatives, integrals, series, parametric equations, and polar coordinates for AP exam success.</p>
+                        <div class="course-info">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 18 weeks</span>
+                            <span class="course-lessons"><i class="fas fa-book"></i> 36 lessons</span>
+                        </div>
+                        <a href="courses.html" class="btn btn-primary btn-full">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="courses-v2-cta">
+                <a href="courses.html" class="btn btn-primary btn-large">View All Courses <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
+    <!-- Testimonials Retro Carousel -->
+    <section id="testimonials" class="testimonials-retro">
         <div class="container">
             <div class="section-header">
                 <h2>Student Success Stories</h2>
                 <p>See how our students achieved their SAT goals</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Dr. Syeed helped me improve my SAT math score from 580 to 750! His teaching style made
-                            complex concepts easy to understand."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Score: 750 Math</p>
+            <div class="retro-carousel-wrapper">
+                <div class="retro-carousel" id="retroCarousel">
+                    <!-- Card 1 - Video Review -->
+                    <div class="retro-card retro-card-video">
+                        <video class="retro-fullcard-video" controls playsinline>
+                            <source src="video/VID-20260227-WA0006.mp4" type="video/mp4">
+                        </video>
+                        <div class="retro-video-overlay">
+                            <div class="retro-name">Ryan</div>
+                            <div class="retro-designation">Score: 750 Math</div>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"The personalized attention and expert guidance from Dr. Syeed was exactly what I needed.
-                            Highly recommend!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Michael Chen</h4>
-                            <p>Score: 780 Math</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Thanks to Dr. Syeed, I got into my dream college! His calculus expertise made the advanced
-                            math sections manageable."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Emily Rodriguez</h4>
-                            <p>Score: 800 Math</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
+                    <!-- Card 2 - Video Review -->
+                    <div class="retro-card retro-card-video">
+                        <video class="retro-fullcard-video" controls playsinline>
+                            <source src="video/Video.mov" type="video/mp4">
+                        </video>
+                        <div class="retro-video-overlay">
+                            <div class="retro-name">Louis Ibrahim</div>
+                            <div class="retro-designation">Score: 780 Math</div>
+                        </div>
+                    </div>
 
-    <!-- Wall of Love Section -->
-    <section id="wall-of-love" class="wall-of-love">
-        <div class="container">
-            <div class="wall-of-love-header">
-                <span class="wall-label"><i class="fas fa-heart"></i> Wall of love</span>
-                <h2>More students choose <span class="highlight">Dr. Syeed</span> than anyone else.</h2>
-                <p>Check out what others say about us.</p>
-            </div>
+                    <!-- Card 3 -->
+                    <div class="retro-card">
+                        <div class="retro-card-bg"></div>
+                        <div class="retro-card-inner">
+                            <div class="retro-profile">
+                                <img src="images/WhatsApp Image 2026-03-24 at 22.30.38.jpeg" alt="Karthik">
+                            </div>
+                            <div class="retro-quote-icon">❝</div>
+                            <p class="retro-description">"Thanks to Dr. Syed, I got into my dream college! His calculus expertise made the advanced math sections manageable."</p>
+                            <div class="retro-name">Karthik</div>
+                            <div class="retro-designation">Score: 800 Math</div>
+                        </div>
+                    </div>
 
-            <!-- Featured Testimonial -->
-            <div class="featured-testimonial">
-                <div class="featured-image">
-                    <img src="https://picsum.photos/seed/featured1/400/500" alt="Jessica Martinez">
-                </div>
-                <div class="featured-content">
-                    <p>"Dr. Syeed helped me sharpen my skills and get <span class="underline">thoroughly prepared</span>
-                        for the test. The video content, including the <span class="underline">explanations</span>,
-                        helped enhance my understanding of individual topics and the test as a whole. The almost
-                        unlimited <span class="underline">practice questions</span> and subsequent <span class="underline">analysis</span> helped me pinpoint my weak points and work on them. The
-                        entire process of preparing with Dr. Syeed is so systematic and <span class="underline">convenient</span> that it takes away all the stress."</p>
-                    <div class="featured-author">Jessica M.</div>
-                    <div class="quote-mark">"</div>
-                </div>
-            </div>
+                    <!-- Card 4 -->
+                    <div class="retro-card">
+                        <div class="retro-card-bg"></div>
+                        <div class="retro-card-inner">
+                            <div class="retro-profile">
+                                <img src="images/WhatsApp Image 2026-03-16 at 19.13.16.jpeg" alt="M. Muzammil">
+                            </div>
+                            <div class="retro-quote-icon">❝</div>
+                            <p class="retro-description">"I went from barely passing math to scoring in the 95th percentile. Dr. Syed's method of teaching the 'why' behind math changed everything for me."</p>
+                            <div class="retro-name">M. Muzammil</div>
+                            <div class="retro-designation">Score: 790 Math</div>
+                        </div>
+                    </div>
 
-            <!-- Small Testimonials Grid -->
-            <div class="small-testimonials-grid">
-                <div class="small-testimonial">
-                    <p>"I'm beyond thankful that Dr. Syeed helped me get into my <span class="underline">dream
-                            school</span>. The video lessons and explanations really helped me grasp the concepts and
-                        <span class="underline">master my mistakes</span>."
-                    </p>
-                    <div class="small-author">Karen G.</div>
-                    <div class="quote-mark">"</div>
+                    <!-- Card 5 -->
+                    <div class="retro-card">
+                        <div class="retro-card-bg"></div>
+                        <div class="retro-card-inner">
+                            <div class="retro-profile">
+                                <img src="images/WhatsApp Image 2026-03-17 at 21.05.29.jpeg" alt="Jack">
+                            </div>
+                            <div class="retro-quote-icon">❝</div>
+                            <p class="retro-description">"Dr. Syed's systematic approach and unlimited practice questions helped me pinpoint my weak points. The entire process was so convenient and stress-free."</p>
+                            <div class="retro-name">Jack</div>
+                            <div class="retro-designation">Score: 760 Math</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="small-testimonial">
-                    <p>"It gave me <span class="underline">peace of mind</span> that if my daughter followed the <span
-                            class="underline">schedule</span>, she'd be prepared in a way I could never have prepared
-                        her for!"</p>
-                    <div class="small-author">Amber J.</div>
-                    <div class="quote-mark">"</div>
-                </div>
-                <div class="small-testimonial">
-                    <p>"I'm a fan of how it teaches me. It's quite <span class="underline">easy to use</span>, great
-                        note taking section area, and a <span class="underline">lot of strategies</span> and ways to
-                        excel."</p>
-                    <div class="small-author">Steven T.</div>
-                    <div class="quote-mark">"</div>
-                </div>
-                <div class="small-testimonial">
-                    <p>"Dr. Syeed helped me learn the material better, actually understand what I was doing, and <span
-                            class="underline">build confidence</span> in what I know."</p>
-                    <div class="small-author">Gabby W.</div>
-                    <div class="quote-mark">"</div>
+                <div class="retro-carousel-controls">
+                    <button class="retro-arrow" id="retroLeft"><i class="fas fa-chevron-left"></i></button>
+                    <button class="retro-arrow" id="retroRight"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
@@ -595,19 +595,61 @@
                 <h2>Investment in Your Future</h2>
                 <p>Flexible pricing options to fit your budget</p>
             </div>
-            <div class="pricing-info">
-                <div class="pricing-highlight">
-                    <i class="fas fa-shield-alt"></i>
-                    <div>
-                        <h3>Score Guarantee</h3>
-                        <p>Improve by at least 150 points or get additional sessions free</p>
+            <div class="pricing-grid">
+                <!-- Basic Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>Basic Prep</h3>
+                        <div class="pricing-duration">4 weeks</div>
+                        <div class="pricing-price">$299</div>
+                    </div>
+                    <div class="pricing-card-body">
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 8 live sessions (2 hours each)</li>
+                            <li><i class="fas fa-check"></i> Access to practice materials</li>
+                            <li><i class="fas fa-check"></i> Email support</li>
+                            <li><i class="fas fa-check"></i> Progress tracking</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Get Started</a>
                     </div>
                 </div>
-                <div class="pricing-highlight">
-                    <i class="fas fa-undo"></i>
-                    <div>
-                        <h3>7-Day Risk-Free Trial</h3>
-                        <p>Try our services with confidence - full refund if not satisfied</p>
+
+                <!-- Comprehensive Plan (Featured) -->
+                <div class="pricing-card pricing-card-featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-card-header">
+                        <h3>Comprehensive Prep</h3>
+                        <div class="pricing-duration">8 weeks</div>
+                        <div class="pricing-price">$599 <span class="pricing-original">$799</span></div>
+                    </div>
+                    <div class="pricing-card-body">
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 16 live sessions (2 hours each)</li>
+                            <li><i class="fas fa-check"></i> Full practice tests with review</li>
+                            <li><i class="fas fa-check"></i> Priority email support</li>
+                            <li><i class="fas fa-check"></i> 1-on-1 strategy session</li>
+                            <li><i class="fas fa-check"></i> Custom study plan</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Intensive Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>Intensive Prep</h3>
+                        <div class="pricing-duration">12 weeks</div>
+                        <div class="pricing-price">$999</div>
+                    </div>
+                    <div class="pricing-card-body">
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 24 live sessions (2 hours each)</li>
+                            <li><i class="fas fa-check"></i> Unlimited practice tests</li>
+                            <li><i class="fas fa-check"></i> 24/7 support</li>
+                            <li><i class="fas fa-check"></i> Weekly 1-on-1 sessions</li>
+                            <li><i class="fas fa-check"></i> Score guarantee</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -625,20 +667,11 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Visit Our Office</h3>
-                                <p>123 Education Street<br>Learning City, LC 12345</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
                             <div class="contact-text">
                                 <h3>Call Us</h3>
-                                <p>+1 (555) 123-4567<br>Mon-Fri: 9AM-6PM</p>
+                                <p>+92 311 830 8324<br>Available for calls & WhatsApp</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -647,22 +680,44 @@
                             </div>
                             <div class="contact-text">
                                 <h3>Email Us</h3>
-                                <p>info@drwaqas.com<br>We respond within 24 hours</p>
+                                <p>tutor@drsyedmath.com<br>We respond within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>WhatsApp</h3>
+                                <p>+92 311 830 8324<br>Quick responses guaranteed</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
                     <h3>Send Us a Message</h3>
-                    <form>
+                    <form id="home-contact-form">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="course" required>
+                                <option value="" disabled selected>Select Subject</option>
+                                <option value="sat-prep">SAT Math Prep</option>
+                                <option value="calculus">AP Calculus</option>
+                                <option value="algebra">Algebra</option>
+                                <option value="geometry">Geometry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">Send Message</button>
                     </form>
@@ -751,9 +806,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Dr. Syeed SAT Prep</h3>
-                    <p>Expert mathematics tutoring for SAT success. Personalized online learning with a PhD in
-                        Mathematics.</p>
+                    <h3>Dr. Syed</h3>
+                    <p>Expert math tutoring from a PhD in Mathematics — Algebra to Calculus.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -764,35 +818,40 @@
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#about">About Dr. Syeed</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#testimonials">Success Stories</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="about.html">About Dr. Syed</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Resources</h4>
+                    <h4>Courses</h4>
                     <ul>
-                        <li><a href="#">SAT Practice Tests</a></li>
-                        <li><a href="#">Math Formula Sheet</a></li>
-                        <li><a href="#">Study Tips</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="courses.html">Algebra</a></li>
+                        <li><a href="courses.html">Geometry</a></li>
+                        <li><a href="courses.html">Pre Calculus</a></li>
+                        <li><a href="courses.html">Calculus AB & BC</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> dr.syeed@satprep.com</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> tutor@drsyedmath.com</li>
+                        <li><i class="fas fa-phone"></i> +92 311 830 8324</li>
                         <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-8PM EST</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Dr. Syeed SAT Prep. All rights reserved.</p>
+                <p>&copy; 2025 Dr. Syed. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923118308324" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="script.js"></script>
 </body>

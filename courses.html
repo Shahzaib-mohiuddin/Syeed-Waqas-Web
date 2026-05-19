@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - Dr. Syeed SAT Prep</title>
-    <meta name="description" content="Choose the perfect SAT prep course for your goals. Self-paced, group coaching, and 1-on-1 tutoring options available.">
+    <title>Courses - Dr. Syed Math Tutoring</title>
+    <meta name="description" content="Master math with expert guidance. Courses in Algebra, Geometry, Pre Calculus, Calculus AB, and Calculus BC.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="courses.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -17,8 +18,8 @@
         <nav class="navbar">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo">
-                    <h2>Dr. Syeed</h2>
-                    <span>SAT Prep</span>
+                    <h2>Dr. Syed</h2>
+                    <span>Math Tutoring</span>
                 </a>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -34,7 +35,10 @@
                         <a href="results.html" class="nav-link">Results</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#pricing" class="nav-link">Pricing</a>
+                        <a href="pricing.html" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item mobile-only">
+                        <a href="contact.html" class="nav-link">Contact</a>
                     </li>
                 </ul>
                 <div class="nav-buttons">
@@ -53,9 +57,9 @@
     <section class="courses-hero">
         <div class="container">
             <div class="courses-hero-content">
-                <span class="courses-badge">Find Your Perfect Program</span>
-                <h1>Choose Your <span class="text-highlight-green">Path to Success</span></h1>
-                <p>Flexible learning options designed to fit your schedule, learning style, and SAT goals</p>
+                <span class="courses-badge"><i class="fas fa-graduation-cap"></i> Start Learning Today</span>
+                <h1>Your Path to <span class="text-highlight-green">Math Mastery</span> Starts Here</h1>
+                <p>Expert-led courses from Algebra to AP Calculus — built to boost your confidence, sharpen your skills, and get you the score you deserve</p>
             </div>
         </div>
     </section>
@@ -63,121 +67,370 @@
     <!-- Courses Section -->
     <section id="courses" class="courses-section">
         <div class="container">
-            <div class="courses-grid">
-                <div class="course-card">
-                    <div class="course-header">
-                        <div class="course-icon">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <h3>Self-Paced Study</h3>
-                        <div class="course-price">
-                            <span class="price">$199</span>
-                            <span class="period">/month</span>
-                        </div>
+            <div class="courses-grid-new">
+                <!-- Algebra Course -->
+                <div class="course-card-new">
+                    <div class="course-thumbnail">
+                        <img src="images/file_0000000080ac71f48134d0e28abdb88b.png" alt="Algebra Course">
+                        <div class="course-level-badge beginner">Beginner</div>
                     </div>
-                    <div class="course-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Full video library access</li>
-                            <li><i class="fas fa-check"></i> 1000+ practice questions</li>
-                            <li><i class="fas fa-check"></i> Detailed answer explanations</li>
-                            <li><i class="fas fa-check"></i> Progress tracking tools</li>
-                            <li><i class="fas fa-check"></i> Study schedule templates</li>
-                        </ul>
+                    <div class="course-card-content">
+                        <h3>Algebra</h3>
+                        <p>Build a strong foundation in algebraic concepts including equations, inequalities, and functions essential for advanced math.</p>
+                        <div class="course-info">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 12 weeks</span>
+                            <span class="course-lessons"><i class="fas fa-book"></i> 24 lessons</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary btn-full">Enroll Now</a>
                     </div>
-                    <button class="btn btn-outline">Start Learning</button>
                 </div>
 
-                <div class="course-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <div class="course-header">
-                        <div class="course-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Group Coaching</h3>
-                        <div class="course-price">
-                            <span class="price">$399</span>
-                            <span class="period">/month</span>
-                        </div>
+                <!-- Geometry Course -->
+                <div class="course-card-new">
+                    <div class="course-thumbnail">
+                        <img src="images/file_00000000f27871f4a9052b7307d0645b.png" alt="Geometry Course">
+                        <div class="course-level-badge beginner">Beginner</div>
                     </div>
-                    <div class="course-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Weekly live group sessions</li>
-                            <li><i class="fas fa-check"></i> Personalized feedback</li>
-                            <li><i class="fas fa-check"></i> Private student community</li>
-                            <li><i class="fas fa-check"></i> All self-paced materials</li>
-                            <li><i class="fas fa-check"></i> Monthly progress reviews</li>
-                        </ul>
+                    <div class="course-card-content">
+                        <h3>Geometry</h3>
+                        <p>Explore shapes, angles, proofs, and spatial reasoning. Master congruence, similarity, circles, and coordinate geometry.</p>
+                        <div class="course-info">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 12 weeks</span>
+                            <span class="course-lessons"><i class="fas fa-book"></i> 24 lessons</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary btn-full">Enroll Now</a>
                     </div>
-                    <button class="btn btn-primary">Enroll Now</button>
                 </div>
 
-                <div class="course-card">
-                    <div class="course-header">
-                        <div class="course-icon">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <h3>1-on-1 Tutoring</h3>
-                        <div class="course-price">
-                            <span class="price">$799</span>
-                            <span class="period">/month</span>
-                        </div>
+                <!-- Pre Calculus Course -->
+                <div class="course-card-new">
+                    <div class="course-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=400&h=250&fit=crop" alt="Pre Calculus Course">
+                        <div class="course-level-badge intermediate">Intermediate</div>
                     </div>
-                    <div class="course-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Dedicated private tutor</li>
-                            <li><i class="fas fa-check"></i> Customized study plan</li>
-                            <li><i class="fas fa-check"></i> Flexible scheduling</li>
-                            <li><i class="fas fa-check"></i> All group coaching benefits</li>
-                            <li><i class="fas fa-check"></i> Priority support</li>
-                        </ul>
+                    <div class="course-card-content">
+                        <h3>Pre Calculus</h3>
+                        <p>Bridge algebra and calculus. Master trigonometry, advanced functions, sequences, series, and introduction to limits.</p>
+                        <div class="course-info">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 14 weeks</span>
+                            <span class="course-lessons"><i class="fas fa-book"></i> 28 lessons</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary btn-full">Enroll Now</a>
                     </div>
-                    <button class="btn btn-outline">Get Started</button>
+                </div>
+
+                <!-- Calculus AB & BC Course -->
+                <div class="course-card-new">
+                    <div class="course-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?w=400&h=250&fit=crop" alt="Calculus Course">
+                        <div class="course-level-badge advanced">Advanced</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h3>Calculus AB & BC</h3>
+                        <p>Complete calculus curriculum covering limits, derivatives, integrals, series, parametric equations, and polar coordinates.</p>
+                        <div class="course-info">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 16 weeks</span>
+                            <span class="course-lessons"><i class="fas fa-book"></i> 32 lessons</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary btn-full">Enroll Now</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Course Comparison Section -->
-    <section class="comparison-section">
+    <!-- Student Testimonials Section -->
+    <section class="courses-testimonials">
         <div class="container">
-            <h2>Compare Our Programs</h2>
-            <div class="comparison-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Features</th>
-                            <th>Self-Paced</th>
-                            <th>Group Coaching</th>
-                            <th>1-on-1 Tutoring</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Video Lessons</td>
-                            <td><i class="fas fa-check text-green"></i></td>
-                            <td><i class="fas fa-check text-green"></i></td>
-                            <td><i class="fas fa-check text-green"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Live Sessions</td>
-                            <td><i class="fas fa-times text-red"></i></td>
-                            <td><i class="fas fa-check text-green"></i></td>
-                            <td><i class="fas fa-check text-green"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Personal Feedback</td>
-                            <td><i class="fas fa-times text-red"></i></td>
-                            <td><i class="fas fa-check text-green"></i></td>
-                            <td><i class="fas fa-check text-green"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Custom Study Plan</td>
-                            <td><i class="fas fa-times text-red"></i></td>
-                            <td><i class="fas fa-check text-green"></i></td>
-                            <td><i class="fas fa-check text-green"></i></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="testimonials-header">
+                <span class="testimonials-label">Student Success Stories</span>
+                <h2>What Our Students Say</h2>
+                <p>Real results from real students who transformed their math skills</p>
+            </div>
+            <div class="testimonials-grid-courses">
+                <!-- Jack Marks -->
+                <div class="testimonial-card-courses">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I was stuck at 650 for months and had almost given up. Dr. Syed broke down every concept so clearly — after just a few weeks, everything clicked. I walked out of the SAT with a 760 in Math. Couldn't have done it without him!"</p>
+                    <div class="testimonial-author-info">
+                        <img src="images/WhatsApp Image 2026-03-17 at 21.05.29.jpeg" alt="Jack">
+                        <div>
+                            <strong>Jack</strong>
+                            <span>SAT Math · 650 → 760</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- M.Muzammil -->
+                <div class="testimonial-card-courses">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I was already scoring well, but I knew I could do better. Dr. Syed helped me close the gap in my weak areas — advanced algebra and data analysis. Going from 740 to 790 felt incredible. His structured approach makes all the difference."</p>
+                    <div class="testimonial-author-info">
+                        <img src="images/WhatsApp Image 2026-03-16 at 19.13.16.jpeg" alt="M.Muzammil">
+                        <div>
+                            <strong>M. Muzammil</strong>
+                            <span>SAT Math · 740 → 790</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartik -->
+                <div class="testimonial-card-courses">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Scoring 800 on SAT Math was a dream, and Dr. Syed made it a reality. He doesn't just teach — he makes you truly understand math at a deep level. The way he explains problem-solving strategies is unlike anything I've experienced. Perfect score, zero regrets!"</p>
+                    <div class="testimonial-author-info">
+                        <img src="images/WhatsApp Image 2026-03-24 at 22.30.38.jpeg" alt="Karthik">
+                        <div>
+                            <strong>Karthik</strong>
+                            <span>SAT Math · 800 (Perfect Score)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-stats">
+                <div class="stat-item-testimonial">
+                    <span class="stat-number-testimonial">4.9/5</span>
+                    <span class="stat-label-testimonial">Average Rating</span>
+                </div>
+                <div class="stat-divider-testimonial"></div>
+                <div class="stat-item-testimonial">
+                    <span class="stat-number-testimonial">500+</span>
+                    <span class="stat-label-testimonial">Happy Students</span>
+                </div>
+                <div class="stat-divider-testimonial"></div>
+                <div class="stat-item-testimonial">
+                    <span class="stat-number-testimonial">98%</span>
+                    <span class="stat-label-testimonial">Would Recommend</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAT Math Practice Test Section -->
+    <section class="sat-practice-section">
+        <div class="container">
+            <div class="sat-practice-header">
+                <span class="sat-practice-badge"><i class="fas fa-play-circle"></i> Video Lessons</span>
+                <h2>SAT Math: College Board <span class="text-highlight-green">Practice Tests</span></h2>
+                <p>Watch Dr. Syed solve official College Board SAT Math practice problems with step-by-step explanations</p>
+            </div>
+            <div class="sat-video-grid">
+                <!-- Video Card 1 -->
+                <div class="sat-video-card">
+                    <div class="sat-video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/HvPfkd8zTZc"
+                            title="SAT Math Practice Test 1"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="sat-video-info">
+                        <span class="sat-video-tag"><i class="fas fa-calculator"></i> Practice Test 1</span>
+                        <h3>College Board Practice Test 1</h3>
+                        <p>Complete walkthrough of SAT Math Section — all questions explained with strategies.</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="sat-video-card">
+                    <div class="sat-video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/FMamMH5O644?start=30"
+                            title="SAT Math Practice Test 2"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="sat-video-info">
+                        <span class="sat-video-tag"><i class="fas fa-calculator"></i> Practice Test 2</span>
+                        <h3>College Board Practice Test 2</h3>
+                        <p>Master every question type with detailed explanations and time-saving tips.</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="sat-video-card">
+                    <div class="sat-video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/WeYnMvCR3lA"
+                            title="SAT Advanced Math"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="sat-video-info">
+                        <span class="sat-video-tag"><i class="fas fa-brain"></i> Advanced Math</span>
+                        <h3>SAT Advanced Math</h3>
+                        <p>Advanced problem-solving strategies and common mistake analysis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sat-practice-cta">
+                <a href="https://www.youtube.com/@YourChannel" target="_blank" class="btn btn-primary btn-large">
+                    <i class="fab fa-youtube"></i> Watch More on YouTube
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Intro Section -->
+    <section class="courses-intro">
+        <div class="container">
+            <div class="courses-intro-content">
+                <h2>Comprehensive Math Tutoring from Algebra to AP Calculus</h2>
+                <p class="intro-lead">Master mathematics with expert-led courses designed to build deep understanding, boost confidence, and achieve exceptional results in SAT, AP exams, and beyond.</p>
+                <div class="intro-columns">
+                    <div class="intro-column">
+                        <h3>Why Choose Our Math Courses?</h3>
+                        <p>Our structured curriculum covers everything from foundational Algebra and Geometry to advanced AP Calculus AB and BC. Each course is taught by Dr. Syed Waqas, a PhD mathematician with 13+ years of teaching experience and a proven track record of helping students achieve top scores.</p>
+                    </div>
+                    <div class="intro-column">
+                        <h3>Personalized Learning Approach</h3>
+                        <p>Unlike generic online courses, our program emphasizes conceptual understanding over memorization. Students learn the "why" behind mathematical concepts, developing problem-solving skills that translate to real exam success and long-term academic achievement.</p>
+                    </div>
+                </div>
+                <div class="intro-features">
+                    <div class="intro-feature-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Expert PhD Instruction</span>
+                    </div>
+                    <div class="intro-feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Proven Results</span>
+                    </div>
+                    <div class="intro-feature-item">
+                        <i class="fas fa-users"></i>
+                        <span>Small Class Sizes</span>
+                    </div>
+                    <div class="intro-feature-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>AP Exam Prep</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="courses-faq">
+        <div class="container">
+            <div class="faq-header-courses">
+                <span class="faq-label">Frequently Asked Questions</span>
+                <h2>Everything You Need to Know</h2>
+                <p>Get answers to common questions about our courses, enrollment, and learning approach</p>
+            </div>
+            <div class="faq-grid-courses">
+                <div class="faq-item-courses">
+                    <div class="faq-question-courses">
+                        <h3>Which course is right for me?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer-courses">
+                        <p>The right course depends on your current skill level and goals. If you're starting from basics, begin with Algebra or Geometry. For SAT prep or college readiness, Pre Calculus is ideal. If you're preparing for AP exams, choose our Calculus AB & BC course. We offer a free assessment to help determine the best fit for you.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-courses">
+                    <div class="faq-question-courses">
+                        <h3>How long does each course take to complete?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer-courses">
+                        <p>Course duration varies: Algebra and Geometry run 12 weeks (24 lessons), Pre Calculus is 14 weeks (28 lessons), and Calculus AB & BC is 16 weeks (32 lessons). Each lesson is 2 hours, with additional practice time recommended between sessions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-courses">
+                    <div class="faq-question-courses">
+                        <h3>Are classes live or pre-recorded?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer-courses">
+                        <p>All courses feature live, interactive sessions with Dr. Syed via Zoom. This allows for real-time questions, personalized feedback, and collaborative problem-solving. Sessions are recorded and available for review, but live attendance is strongly encouraged for maximum benefit.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-courses">
+                    <div class="faq-question-courses">
+                        <h3>What materials are included?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer-courses">
+                        <p>Each course includes comprehensive study materials: digital textbooks, practice problem sets, video lesson recordings, formula sheets, and access to our online learning platform. For AP courses, you'll also receive official practice exams and test-taking strategies.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-courses">
+                    <div class="faq-question-courses">
+                        <h3>What is the class size?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer-courses">
+                        <p>We maintain small class sizes of 8-12 students maximum to ensure personalized attention. This allows Dr. Syed to address individual questions, track each student's progress, and adapt teaching methods to the group's needs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-courses">
+                    <div class="faq-question-courses">
+                        <h3>Do you offer one-on-one tutoring?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer-courses">
+                        <p>Yes! In addition to group courses, we offer private one-on-one tutoring sessions for students who need intensive, personalized support or have specific learning goals. Contact us for pricing and availability.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-courses">
+                    <div class="faq-question-courses">
+                        <h3>What if I miss a class?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer-courses">
+                        <p>All live sessions are recorded and available within 24 hours. You can watch the recording at your convenience and email Dr. Syed with any questions. However, we recommend attending live whenever possible for the interactive learning experience.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-courses">
+                    <div class="faq-question-courses">
+                        <h3>Is there a refund policy?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer-courses">
+                        <p>We offer a 7-day money-back guarantee. If you're not satisfied after the first week, you'll receive a full refund. After that period, refunds are prorated based on remaining sessions. We're confident you'll love the course!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-courses">
+                    <div class="faq-question-courses">
+                        <h3>Do you guarantee score improvements?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer-courses">
+                        <p>While we can't guarantee specific scores (as results depend on individual effort), 98% of our students show significant improvement. For SAT prep students who complete all assignments, we guarantee at least a 150-point improvement or provide additional sessions free of charge.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -186,9 +439,9 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Start Your SAT Journey?</h2>
-                <p>Join thousands of students who've improved their scores with Dr. Syeed</p>
-                <button class="btn btn-primary btn-large">Book Free Consultation</button>
+                <h2>Ready to Start Your Math Journey?</h2>
+                <p>Join students who've built confidence and mastery with Dr. Syed</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Book Free Consultation</a>
             </div>
         </div>
     </section>
@@ -198,29 +451,76 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Dr. Syeed SAT Prep</h3>
-                    <p>Expert SAT preparation from a PhD in Mathematics</p>
+                    <h3>Dr. Syed</h3>
+                    <p>Expert math tutoring from a PhD in Mathematics — Algebra to Calculus.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About Dr. Syed</a></li>
                         <li><a href="courses.html">Courses</a></li>
                         <li><a href="results.html">Results</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="courses.html">Algebra</a></li>
+                        <li><a href="courses.html">Geometry</a></li>
+                        <li><a href="courses.html">Pre Calculus</a></li>
+                        <li><a href="courses.html">Calculus AB & BC</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: info@drsyeed.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> tutor@drsyedmath.com</li>
+                        <li><i class="fas fa-phone"></i> +92 311 830 8324</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-8PM EST</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Dr. Syeed SAT Prep. All rights reserved.</p>
+                <p>&copy; 2025 Dr. Syed. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923118308324" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item-courses');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question-courses');
+                
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

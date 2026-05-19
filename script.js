@@ -17,6 +17,8 @@ window.addEventListener('load', () => {
     initCursorGlow();
     initRipple();
     initRetroCarousel();
+    initVideoCards();
+    initGridVideoCards();
     initContactForms();
 });
 
@@ -445,45 +447,73 @@ console.log('%c Dr. Syed Waqas — Math Tutoring', 'color: #344CC6; font-size: 2
 console.log('%cMaster math from Algebra to Calculus!', 'color: #7c3aed; font-size: 14px;');
 
 // ---- DYNAMIC VIDEO PLAYER HANDLERS ----
-function playRetroVideo(card) {
-    const video = card.querySelector('video');
-    const playBtnContainer = card.querySelector('.play-btn-container');
-    const overlay = card.querySelector('.retro-video-overlay');
-    if (!video) return;
-    
-    if (video.paused) {
-        video.play();
-        if (playBtnContainer) playBtnContainer.style.opacity = '0';
-        if (overlay) overlay.style.opacity = '0';
-    } else {
-        video.pause();
-        if (playBtnContainer) playBtnContainer.style.opacity = '1';
-        if (overlay) overlay.style.opacity = '1';
-    }
-    
-    // Automatically restore cover when video ends
-    video.addEventListener('ended', () => {
-        if (playBtnContainer) playBtnContainer.style.opacity = '1';
-        if (overlay) overlay.style.opacity = '1';
-        video.load(); // Reset back to seek 0.001
+function initVideoCards() {
+    const cards = document.querySelectorAll('.retro-card-video');
+    cards.forEach(card => {
+        const video = card.querySelector('video');
+        const playBtnContainer = card.querySelector('.play-btn-container');
+        const overlay = card.querySelector('.retro-video-overlay');
+        if (!video) return;
+        
+        // Card click acts as play/pause toggler
+        card.addEventListener('click', (e) => {
+            // Let the native video controls handle clicks directly without parent toggles
+            if (e.target.tagName === 'VIDEO') return;
+            
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+        
+        // Listen to native HTML5 media events to sync custom overlays smoothly
+        video.addEventListener('play', () => {
+            if (playBtnContainer) playBtnContainer.style.opacity = '0';
+            if (overlay) overlay.style.opacity = '0';
+        });
+        
+        video.addEventListener('pause', () => {
+            if (playBtnContainer) playBtnContainer.style.opacity = '1';
+            if (overlay) overlay.style.opacity = '1';
+        });
+        
+        video.addEventListener('ended', () => {
+            if (playBtnContainer) playBtnContainer.style.opacity = '1';
+            if (overlay) overlay.style.opacity = '1';
+            video.load(); // seek back to 0.001
+        });
     });
 }
 
-function playGridVideo(card) {
-    const video = card.querySelector('video');
-    const playBtnContainer = card.querySelector('.play-btn-container');
-    if (!video) return;
-    
-    if (video.paused) {
-        video.play();
-        if (playBtnContainer) playBtnContainer.style.opacity = '0';
-    } else {
-        video.pause();
-        if (playBtnContainer) playBtnContainer.style.opacity = '1';
-    }
-    
-    video.addEventListener('ended', () => {
-        if (playBtnContainer) playBtnContainer.style.opacity = '1';
-        video.load();
+function initGridVideoCards() {
+    const cards = document.querySelectorAll('.video-testimonial-card');
+    cards.forEach(card => {
+        const video = card.querySelector('video');
+        const playBtnContainer = card.querySelector('.play-btn-container');
+        if (!video) return;
+        
+        card.addEventListener('click', (e) => {
+            if (e.target.tagName === 'VIDEO') return;
+            
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+        
+        video.addEventListener('play', () => {
+            if (playBtnContainer) playBtnContainer.style.opacity = '0';
+        });
+        
+        video.addEventListener('pause', () => {
+            if (playBtnContainer) playBtnContainer.style.opacity = '1';
+        });
+        
+        video.addEventListener('ended', () => {
+            if (playBtnContainer) playBtnContainer.style.opacity = '1';
+            video.load();
+        });
     });
 }

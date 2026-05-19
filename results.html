@@ -744,9 +744,14 @@
             <p>Unscripted video testimonials from students who made it happen</p>
         </div>
         <div class="video-testimonials-grid">
-            <div class="video-testimonial-card">
-                <div class="video-testimonial-player">
-                    <video controls playsinline preload="metadata" poster="">
+            <div class="video-testimonial-card" onclick="playGridVideo(this)">
+                <div class="video-testimonial-player" style="position: relative;">
+                    <div class="retro-video-placeholder">
+                        <div class="play-btn-pulse small-pulse">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <video controls playsinline preload="metadata" poster="" style="opacity: 0; transition: opacity 0.5s ease; position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2;">
                         <source src="video/VID-20260227-WA0006.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -756,9 +761,14 @@
                     <div class="video-testimonial-score">SAT Math Score: 750</div>
                 </div>
             </div>
-            <div class="video-testimonial-card">
-                <div class="video-testimonial-player">
-                    <video controls playsinline preload="metadata" poster="">
+            <div class="video-testimonial-card" onclick="playGridVideo(this)">
+                <div class="video-testimonial-player" style="position: relative;">
+                    <div class="retro-video-placeholder">
+                        <div class="play-btn-pulse small-pulse">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <video controls playsinline preload="metadata" poster="" style="opacity: 0; transition: opacity 0.5s ease; position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2;">
                         <source src="video/Video.mov" type="video/mp4">
                     </video>
                 </div>

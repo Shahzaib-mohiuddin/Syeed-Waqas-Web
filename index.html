@@ -517,22 +517,32 @@
             <div class="retro-carousel-wrapper">
                 <div class="retro-carousel" id="retroCarousel">
                     <!-- Card 1 - Video Review -->
-                    <div class="retro-card retro-card-video">
-                        <video class="retro-fullcard-video" controls playsinline preload="metadata">
+                    <div class="retro-card retro-card-video" onclick="playRetroVideo(this)">
+                        <div class="retro-video-placeholder">
+                            <div class="play-btn-pulse">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="retro-fullcard-video" controls playsinline preload="metadata" style="opacity: 0; transition: opacity 0.5s ease; position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2;">
                             <source src="video/VID-20260227-WA0006.mp4" type="video/mp4">
                         </video>
-                        <div class="retro-video-overlay">
+                        <div class="retro-video-overlay" style="z-index: 3; transition: opacity 0.5s ease;">
                             <div class="retro-name">Ryan</div>
                             <div class="retro-designation">Score: 750 Math</div>
                         </div>
                     </div>
-
+ 
                     <!-- Card 2 - Video Review -->
-                    <div class="retro-card retro-card-video">
-                        <video class="retro-fullcard-video" controls playsinline preload="metadata">
+                    <div class="retro-card retro-card-video" onclick="playRetroVideo(this)">
+                        <div class="retro-video-placeholder">
+                            <div class="play-btn-pulse">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="retro-fullcard-video" controls playsinline preload="metadata" style="opacity: 0; transition: opacity 0.5s ease; position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2;">
                             <source src="video/Video.mov" type="video/mp4">
                         </video>
-                        <div class="retro-video-overlay">
+                        <div class="retro-video-overlay" style="z-index: 3; transition: opacity 0.5s ease;">
                             <div class="retro-name">Louis Ibrahim</div>
                             <div class="retro-designation">Score: 780 Math</div>
                         </div>

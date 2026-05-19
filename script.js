@@ -443,3 +443,44 @@ function initRetroCarousel() {
 // ---- CONSOLE BRANDING ----
 console.log('%c Dr. Syed Waqas — Math Tutoring', 'color: #344CC6; font-size: 20px; font-weight: bold;');
 console.log('%cMaster math from Algebra to Calculus!', 'color: #7c3aed; font-size: 14px;');
+
+// ---- DYNAMIC VIDEO PLAYER HANDLERS ----
+function playRetroVideo(card) {
+    const video = card.querySelector('video');
+    const placeholder = card.querySelector('.retro-video-placeholder');
+    const overlay = card.querySelector('.retro-video-overlay');
+    if (!video) return;
+    
+    // Hide standard overlay elements and show video
+    video.style.opacity = '1';
+    if (placeholder) placeholder.style.opacity = '0';
+    if (overlay) overlay.style.opacity = '0';
+    
+    // Toggle system controls and play
+    video.play();
+    
+    // Reset back to premium cover when video ends
+    video.addEventListener('ended', () => {
+        video.style.opacity = '0';
+        if (placeholder) placeholder.style.opacity = '1';
+        if (overlay) overlay.style.opacity = '1';
+        video.load(); // Reload to start
+    });
+}
+
+function playGridVideo(card) {
+    const video = card.querySelector('video');
+    const placeholder = card.querySelector('.retro-video-placeholder');
+    if (!video) return;
+    
+    video.style.opacity = '1';
+    if (placeholder) placeholder.style.opacity = '0';
+    
+    video.play();
+    
+    video.addEventListener('ended', () => {
+        video.style.opacity = '0';
+        if (placeholder) placeholder.style.opacity = '1';
+        video.load();
+    });
+}

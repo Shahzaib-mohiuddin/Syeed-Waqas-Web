@@ -447,40 +447,43 @@ console.log('%cMaster math from Algebra to Calculus!', 'color: #7c3aed; font-siz
 // ---- DYNAMIC VIDEO PLAYER HANDLERS ----
 function playRetroVideo(card) {
     const video = card.querySelector('video');
-    const placeholder = card.querySelector('.retro-video-placeholder');
+    const playBtnContainer = card.querySelector('.play-btn-container');
     const overlay = card.querySelector('.retro-video-overlay');
     if (!video) return;
     
-    // Hide standard overlay elements and show video
-    video.style.opacity = '1';
-    if (placeholder) placeholder.style.opacity = '0';
-    if (overlay) overlay.style.opacity = '0';
-    
-    // Toggle system controls and play
-    video.play();
-    
-    // Reset back to premium cover when video ends
-    video.addEventListener('ended', () => {
-        video.style.opacity = '0';
-        if (placeholder) placeholder.style.opacity = '1';
+    if (video.paused) {
+        video.play();
+        if (playBtnContainer) playBtnContainer.style.opacity = '0';
+        if (overlay) overlay.style.opacity = '0';
+    } else {
+        video.pause();
+        if (playBtnContainer) playBtnContainer.style.opacity = '1';
         if (overlay) overlay.style.opacity = '1';
-        video.load(); // Reload to start
+    }
+    
+    // Automatically restore cover when video ends
+    video.addEventListener('ended', () => {
+        if (playBtnContainer) playBtnContainer.style.opacity = '1';
+        if (overlay) overlay.style.opacity = '1';
+        video.load(); // Reset back to seek 0.001
     });
 }
 
 function playGridVideo(card) {
     const video = card.querySelector('video');
-    const placeholder = card.querySelector('.retro-video-placeholder');
+    const playBtnContainer = card.querySelector('.play-btn-container');
     if (!video) return;
     
-    video.style.opacity = '1';
-    if (placeholder) placeholder.style.opacity = '0';
-    
-    video.play();
+    if (video.paused) {
+        video.play();
+        if (playBtnContainer) playBtnContainer.style.opacity = '0';
+    } else {
+        video.pause();
+        if (playBtnContainer) playBtnContainer.style.opacity = '1';
+    }
     
     video.addEventListener('ended', () => {
-        video.style.opacity = '0';
-        if (placeholder) placeholder.style.opacity = '1';
+        if (playBtnContainer) playBtnContainer.style.opacity = '1';
         video.load();
     });
 }

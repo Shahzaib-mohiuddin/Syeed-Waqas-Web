@@ -4165,6 +4165,10 @@ body.loaded {
     border-radius: inherit;
 }
 
+.play-btn-container {
+    pointer-events: none;
+}
+
 .play-btn-pulse {
     width: 70px;
     height: 70px;
